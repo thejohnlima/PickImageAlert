@@ -1,0 +1,11 @@
+/* 
+  Localizable.strings
+  PickImageAlert
+
+  Created by John Lima on 11/11/18.
+  Copyright © 2018 jlimadeveloper. All rights reserved.
+*/
+
+"error.title" = "Error";
+"error.noCamera" = "You don't have camera";
+"title.cancel" = "Cancel";
