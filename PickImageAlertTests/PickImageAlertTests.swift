@@ -38,13 +38,17 @@ class PickImageAlertTests: XCTestCase {
   // MARK: - Tests
   func testInitWithSuccess() {
     XCTAssertNotNil(pickImageAlert)
-    XCTAssertNotNil(pickImageAlert?.pickerController.delegate)
     XCTAssertNotNil(pickImageAlert?.alertController)
+    XCTAssertNotNil(pickImageAlert?.pickerController.delegate)
+    XCTAssertTrue(pickImageAlert?.pickerController.delegate is PickImageAlert)
     XCTAssertEqual(pickImageAlert?.limitImages, 120)
     XCTAssertEqual(pickImageAlert?.imageSize, CGSize(width: 320, height: 320))
   }
 
   func testSetupAlertControllerWithSuccess() {
     XCTAssertEqual(pickImageAlert?.alertController?.actions.count, 3)
+    XCTAssertEqual(pickImageAlert?.alertController?.actions[0].title, "Camera")
+    XCTAssertEqual(pickImageAlert?.alertController?.actions[1].title, "Gallary")
+    XCTAssertEqual(pickImageAlert?.alertController?.actions[2].title, "Cancelar")
   }
 }

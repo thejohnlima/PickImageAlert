@@ -49,23 +49,28 @@ open class PickImageAlert: NSObject {
 
   // MARK: - Constants
   private let alertViewHeight: CGFloat = 360
+  private let alertActionViewHeight: CGFloat = 57
 
   private var photoCellSize: CGSize {
-    let deviceSize = UIScreen.main.bounds.size
-    let isLandscape: Bool = deviceSize.width > deviceSize.height
-    let percentWidth: CGFloat = isLandscape ? 0.2 : 0.38
-    let width: CGFloat = deviceSize.width * percentWidth
-    let height: CGFloat = isLandscape ? 108 : 120
-    return CGSize(width: width, height: height)
+    let result = CGSize(width: photosView.frame.width / 2.2, height: photosView.frame.height - 8)
+    print(" photo view: \(photosView.frame)")
+    print(" result: \(result)")
+    return result
   }
 
   // MARK: - Properties
-  internal let photosView: PICollectionImages = UIView.fromNib()
+  internal weak var targetController: UIViewController?
   internal var pickerController = UIImagePickerController()
   internal var pickImageSuccess: SuccessBlock<UIImage>?
   internal var alertController: PIAlertController?
   internal var fetchedImages: [UIImage] = []
-  internal weak var targetController: UIViewController?
+
+  internal lazy var photosView: PICollectionImages = {
+    let view: PICollectionImages = UIView.fromNib()
+    view.translatesAutoresizingMaskIntoConstraints = false
+    view.backgroundColor = .clear
+    return view
+  }()
 
   /// The limit of images that will appear in the collection.
   /// The default value is 120
@@ -137,62 +142,59 @@ open class PickImageAlert: NSObject {
   // MARK: - Private Methods
   private func setupAlertCollection(_ images: [UIImage]) {
     DispatchQueue.main.async { [weak self] in
-      guard let strongSelf = self else { return }
-
-      strongSelf.photosView.removeFromSuperview()
-      strongSelf.alertController?.view.addSubview(strongSelf.photosView)
-
-      strongSelf.fetchedImages = images
-      strongSelf.setupPhotosView()
-
-      strongSelf.alertController?.view.translatesAutoresizingMaskIntoConstraints = false
-
-      strongSelf.setupAlertViewConstraintHeight()
+      guard let `self` = self else { return }
+      self.fetchedImages = images
+      self.removePhotosViewFromSuperview()
+      self.alertController?.view.addSubview(self.photosView)
+      self.setupPhotosView()
+      self.setupAlertViewConstraints()
     }
   }
 
-  private func setupAlertViewConstraintHeight() {
-    var alertViewConstraintHeight: NSLayoutConstraint? {
-      guard let view = alertController?.view else { return nil }
-      let constraint = NSLayoutConstraint(item: view,
-                                          attribute: .height,
-                                          relatedBy: .equal,
-                                          toItem: nil,
-                                          attribute: .notAnAttribute,
-                                          multiplier: 1.0,
-                                          constant: alertViewHeight)
-      constraint.isActive = true
-      constraint.priority = .defaultHigh
-      return constraint
-    }
+  private func setupAlertViewConstraints() {
+    guard let view = alertController?.view else { return }
 
-    guard let constraintHeight = alertViewConstraintHeight else { return }
-    alertController?.view.removeConstraint(constraintHeight)
-    alertController?.view.addConstraint(constraintHeight)
-  }
+    alertController?.view.translatesAutoresizingMaskIntoConstraints = false
 
-  private func setupPhotosView() {
-    guard let alert = alertController else { return }
+    let constraintHeightIdentifier: String = alertController?.identifier ?? "" + "height"
 
-    photosView.translatesAutoresizingMaskIntoConstraints = false
-    photosView.topAnchor.constraint(equalTo: alert.view.topAnchor, constant: 45).isActive = true
-    photosView.rightAnchor.constraint(equalTo: alert.view.rightAnchor, constant: -10).isActive = true
-    photosView.leftAnchor.constraint(equalTo: alert.view.leftAnchor, constant: 10).isActive = true
-
-    let constraintHeight = NSLayoutConstraint(item: photosView,
+    let constraintHeight = NSLayoutConstraint(item: view,
                                               attribute: .height,
                                               relatedBy: .equal,
                                               toItem: nil,
                                               attribute: .notAnAttribute,
                                               multiplier: 1.0,
-                                              constant: photoCellSize.height)
-    constraintHeight.priority = .defaultLow
+                                              constant: alertViewHeight)
+    constraintHeight.priority = .defaultHigh
     constraintHeight.isActive = true
+    constraintHeight.identifier = constraintHeightIdentifier
 
-    photosView.removeConstraint(constraintHeight)
-    photosView.addConstraint(constraintHeight)
+    var constraintToRemove: NSLayoutConstraint {
+      let constraint = alertController?.view.constraints.first { $0.identifier == constraintHeightIdentifier }
+      return constraint ?? constraintHeight
+    }
 
-    photosView.backgroundColor = .clear
+    alertController?.view.removeConstraint(constraintToRemove)
+    alertController?.view.addConstraint(constraintHeight)
+  }
+
+  private func removePhotosViewFromSuperview() {
+    let existedView = alertController?.view.subviews.first { $0 is PICollectionImages }
+    existedView?.removeFromSuperview()
+  }
+
+  private func setupPhotosView() {
+    guard let alert = alertController else { return }
+
+    photosView.topAnchor.constraint(equalTo: alert.view.topAnchor, constant: 45).isActive = true
+    photosView.rightAnchor.constraint(equalTo: alert.view.rightAnchor, constant: -10).isActive = true
+    photosView.leftAnchor.constraint(equalTo: alert.view.leftAnchor, constant: 10).isActive = true
+
+    let constraintBottomValue = (CGFloat(alert.actions.count) * alertActionViewHeight) + 16
+
+    photosView.bottomAnchor
+      .constraint(equalTo: alert.view.bottomAnchor, constant: -constraintBottomValue).isActive = true
+
     photosView.viewModel.images = fetchedImages
     photosView.delegate = self
     photosView.cellSize = photoCellSize
