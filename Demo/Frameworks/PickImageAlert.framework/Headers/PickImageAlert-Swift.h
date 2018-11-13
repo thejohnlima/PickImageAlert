@@ -198,6 +198,36 @@ SWIFT_CLASS("_TtC14PickImageAlert17PIAlertController")
 
 
 
+/// PickImageAlert fetch images from your library and show them in UIAlertController.
+/// Also adds one alert action to open camera and another one to open photos library.
+/// The selected image is returned in UIImage type.
+/// Follow the steps bellow to setup the alert in your view controller.
+/// <em>Step 1:</em> Create an optional property
+/// \code
+/// var pickImageAlert: PickImageAlert?
+///
+/// \endcode<em>Step 2:</em> Initialize the alert in your viewDidLoad method
+/// \code
+/// override func viewDidLoad() {
+///   super.viewDidLoad()
+///   let properties = PIAlertController.AlertProperties(
+///     title: "Choose Image",
+///     cameraActionTitle: "Camera",
+///     gallaryActionTitle: "Gallary",
+///     cancelActionTitle: "Cancelar"
+///   )
+///   pickImageAlert = PickImageAlert(with: self, alertProperties: properties)
+/// }
+///
+/// \endcode<em>Step 3:</em> In your action, call the <code>pickImage</code> method to present the alert with images.
+/// \code
+/// @IBAction private func choosePhoto(sender: Any?) {
+///   pickImageAlert?.pickImage { image in
+///     print("image: \(String(describing: image))")
+///   }
+/// }
+///
+/// \endcodeThat’s it 🍺
 SWIFT_CLASS("_TtC14PickImageAlert14PickImageAlert")
 @interface PickImageAlert : NSObject
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
