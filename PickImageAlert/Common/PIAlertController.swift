@@ -11,10 +11,17 @@ import UIKit
 public class PIAlertController: UIAlertController {
 
   // MARK: - Properties
+  internal var willAppear: ((_ alert: UIAlertController) -> Void)?
   internal var didAppear: ((_ alert: UIAlertController) -> Void)?
   internal var didDisappear: ((_ alert: UIAlertController) -> Void)?
+  internal var willChangeOrientation: ((_ alert: UIAlertController) -> Void)?
 
   // MARK: - View LifeCycle
+  override public func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    willAppear?(self)
+  }
+
   override public func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
     didAppear?(self)
@@ -23,6 +30,11 @@ public class PIAlertController: UIAlertController {
   override public func viewDidDisappear(_ animated: Bool) {
     super.viewDidDisappear(animated)
     didDisappear?(self)
+  }
+
+  override public func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+    super.viewWillTransition(to: size, with: coordinator)
+    willChangeOrientation?(self)
   }
 }
 

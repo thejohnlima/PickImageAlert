@@ -51,13 +51,6 @@ open class PickImageAlert: NSObject {
   private let alertViewHeight: CGFloat = 360
   private let alertActionViewHeight: CGFloat = 57
 
-  private var photoCellSize: CGSize {
-    let result = CGSize(width: photosView.frame.width / 2.2, height: photosView.frame.height - 8)
-    print(" photo view: \(photosView.frame)")
-    print(" result: \(result)")
-    return result
-  }
-
   // MARK: - Properties
   internal weak var targetController: UIViewController?
   internal var pickerController = UIImagePickerController()
@@ -120,6 +113,10 @@ open class PickImageAlert: NSObject {
     alertController?.didDisappear = { _ in
       self.removeObservers()
     }
+
+    alertController?.willChangeOrientation = { _ in
+      self.photosView.collectionView.collectionViewLayout.invalidateLayout()
+    }
   }
 
   // MARK: - Public Methods
@@ -141,11 +138,11 @@ open class PickImageAlert: NSObject {
 
   // MARK: - Private Methods
   private func setupAlertCollection(_ images: [UIImage]) {
+    fetchedImages = images
     DispatchQueue.main.async { [weak self] in
       guard let `self` = self else { return }
-      self.fetchedImages = images
-      self.removePhotosViewFromSuperview()
-      self.alertController?.view.addSubview(self.photosView)
+      let index: Int = self.alertController?.view.subviews.count ?? 1 - 1
+      self.alertController?.view.insertSubview(self.photosView, at: index)
       self.setupPhotosView()
       self.setupAlertViewConstraints()
     }
@@ -178,11 +175,6 @@ open class PickImageAlert: NSObject {
     alertController?.view.addConstraint(constraintHeight)
   }
 
-  private func removePhotosViewFromSuperview() {
-    let existedView = alertController?.view.subviews.first { $0 is PICollectionImages }
-    existedView?.removeFromSuperview()
-  }
-
   private func setupPhotosView() {
     guard let alert = alertController else { return }
 
@@ -197,7 +189,6 @@ open class PickImageAlert: NSObject {
 
     photosView.viewModel.images = fetchedImages
     photosView.delegate = self
-    photosView.cellSize = photoCellSize
     photosView.collectionView.reloadData()
   }
 
@@ -209,26 +200,32 @@ open class PickImageAlert: NSObject {
   }
 
   private func openCamera() {
-    alertController?.dismiss(animated: true)
-    if UIImagePickerController .isSourceTypeAvailable(.camera) {
-      pickerController.sourceType = .camera
-      targetController?.present(pickerController, animated: true, completion: nil)
-    } else {
-      let alert = UIAlertController(
-        title: Localizable.errorTitle,
-        message: Localizable.errorNoCamera,
-        preferredStyle: .alert
-      )
-      let action = UIAlertAction(title: Localizable.titleCancel, style: .destructive)
-      alert.addAction(action)
-      targetController?.present(alert, animated: true, completion: nil)
+    DispatchQueue.main.async { [weak self] in
+      guard let `self` = self else { return }
+      self.alertController?.dismiss(animated: true)
+      if UIImagePickerController .isSourceTypeAvailable(.camera) {
+        self.pickerController.sourceType = .camera
+        self.targetController?.present(self.pickerController, animated: true, completion: nil)
+      } else {
+        let alert = UIAlertController(
+          title: Localizable.errorTitle,
+          message: Localizable.errorNoCamera,
+          preferredStyle: .alert
+        )
+        let action = UIAlertAction(title: Localizable.titleCancel, style: .destructive)
+        alert.addAction(action)
+        self.targetController?.present(alert, animated: true, completion: nil)
+      }
     }
   }
 
   private func openGallery() {
-    alertController?.dismiss(animated: true)
-    pickerController.sourceType = .photoLibrary
-    targetController?.present(pickerController, animated: true, completion: nil)
+    DispatchQueue.main.async { [weak self] in
+      guard let `self` = self else { return }
+      self.alertController?.dismiss(animated: true)
+      self.pickerController.sourceType = .photoLibrary
+      self.targetController?.present(self.pickerController, animated: true, completion: nil)
+    }
   }
 
   private func fetchPhotos(success: @escaping SuccessBlock<[UIImage]>, empty: EmptyBlock? = nil) {
