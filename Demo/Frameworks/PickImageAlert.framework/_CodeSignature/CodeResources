@@ -6,7 +6,7 @@
 	<dict>
 		<key>Headers/PickImageAlert-Swift.h</key>
 		<data>
-		IuTAt9QwXXQf00DBLHNT+NTv218=
+		5RTzJN/Eeed8hRHqti3SsYITDNQ=
 		</data>
 		<key>Headers/PickImageAlert.h</key>
 		<data>
@@ -22,7 +22,7 @@
 		</data>
 		<key>Modules/PickImageAlert.swiftmodule/i386.swiftmodule</key>
 		<data>
-		BZNmrjA9kq80S/AARKSN+cwQE54=
+		atjBm9DUvB1L6ZdGE6duU/OA5jo=
 		</data>
 		<key>Modules/PickImageAlert.swiftmodule/x86_64.swiftdoc</key>
 		<data>
@@ -30,7 +30,7 @@
 		</data>
 		<key>Modules/PickImageAlert.swiftmodule/x86_64.swiftmodule</key>
 		<data>
-		CYI6ZjAD6xmp76KW2/TvwGqyVD0=
+		8peyFsXIw1lDwcC1mdGzfVbT18k=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -38,11 +38,11 @@
 		</data>
 		<key>PICollectionImageCell.nib</key>
 		<data>
-		pUA1mCWbZ4PV6Z1I3jOqOvxfe/0=
+		gHhxbTv9ObvAPhK5zQuhQ0BpSuw=
 		</data>
 		<key>PICollectionImages.nib</key>
 		<data>
-		F5RfHPqVLCzyiaIFmfwRe8xj1uA=
+		g7O00AnR3cmCIKK90vAGdkIs1MM=
 		</data>
 		<key>en.lproj/Localizable.strings</key>
 		<dict>
@@ -60,11 +60,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			IuTAt9QwXXQf00DBLHNT+NTv218=
+			5RTzJN/Eeed8hRHqti3SsYITDNQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			2XOjyMR9iQPx4ck4aS3n5tcgWYPSeTn1eZHs56Bp75s=
+			8BGMFJ6x7tf0Cbgb2UHq22Y+a1R1V+spkLPDBMB7BZI=
 			</data>
 		</dict>
 		<key>Headers/PickImageAlert.h</key>
@@ -93,11 +93,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			BZNmrjA9kq80S/AARKSN+cwQE54=
+			atjBm9DUvB1L6ZdGE6duU/OA5jo=
 			</data>
 			<key>hash2</key>
 			<data>
-			PazhAx1rMoj3BYuZwEO8sIJFPX0qla/MV0+UTVPtp0w=
+			sXjTy8j+CaMjgaovHqvr+wdBQilnOTDI/y7UkpP4i/k=
 			</data>
 		</dict>
 		<key>Modules/PickImageAlert.swiftmodule/x86_64.swiftdoc</key>
@@ -115,11 +115,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			CYI6ZjAD6xmp76KW2/TvwGqyVD0=
+			8peyFsXIw1lDwcC1mdGzfVbT18k=
 			</data>
 			<key>hash2</key>
 			<data>
-			rieDnS2gdDcI5vHzx+M9IjUUfhf9nBAVypuZKP6o74o=
+			cG+zLaPFAS03R2gJjsbuWIeu9E1QJCUt3OVQyJN5J/0=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -137,22 +137,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			pUA1mCWbZ4PV6Z1I3jOqOvxfe/0=
+			gHhxbTv9ObvAPhK5zQuhQ0BpSuw=
 			</data>
 			<key>hash2</key>
 			<data>
-			bLcTc58ad2KHlmgDFZCPxnFv4gxrOfSqxMWfzPzfWW4=
+			oauGUoiOKubjM2SvnT7gDXE5dWDKboGE9lZxci+i4S0=
 			</data>
 		</dict>
 		<key>PICollectionImages.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			F5RfHPqVLCzyiaIFmfwRe8xj1uA=
+			g7O00AnR3cmCIKK90vAGdkIs1MM=
 			</data>
 			<key>hash2</key>
 			<data>
-			WRHNYVNWTxBh5hlol9pa1RTL6673rIFzY2enQPdnl7I=
+			G3QgxdEjbsA1pav7AiekyjEMalStlSqmcHiVW2byUas=
 			</data>
 		</dict>
 		<key>en.lproj/Localizable.strings</key>

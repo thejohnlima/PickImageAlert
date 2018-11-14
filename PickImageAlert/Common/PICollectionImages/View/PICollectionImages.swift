@@ -22,8 +22,8 @@ internal class PICollectionImages: UIView {
   @IBOutlet weak var collectionView: UICollectionView!
   
   let viewModel = PICollectionImagesViewModel()
-  var cellSize: CGSize = .zero
-  var cellInsets = UIEdgeInsets(top: 0, left: 2, bottom: 0, right: 2)
+  var sectionSpace: (line: CGFloat, between: CGFloat) = (8, 8)
+  var sectionInset: UIEdgeInsets = .zero
   
   weak var delegate: PICollectionImagesDelegate?
   
@@ -57,13 +57,28 @@ extension PICollectionImages: UICollectionViewDelegateFlowLayout {
   func collectionView(_ collectionView: UICollectionView,
                       layout collectionViewLayout: UICollectionViewLayout,
                       sizeForItemAt indexPath: IndexPath) -> CGSize {
-    return cellSize
+    let subtractValue: CGFloat = sectionInset.top + sectionInset.bottom
+    let height: CGFloat = collectionView.frame.height - subtractValue
+    let size = CGSize(width: collectionView.frame.width / 2.2, height: height)
+    return size
   }
   
   func collectionView(_ collectionView: UICollectionView,
                       layout collectionViewLayout: UICollectionViewLayout,
                       insetForSectionAt section: Int) -> UIEdgeInsets {
-    return cellInsets
+    return sectionInset
+  }
+
+  func collectionView(_ collectionView: UICollectionView,
+                      layout collectionViewLayout: UICollectionViewLayout,
+                      minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+    return sectionSpace.between
+  }
+
+  func collectionView(_ collectionView: UICollectionView,
+                      layout collectionViewLayout: UICollectionViewLayout,
+                      minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+    return sectionSpace.line
   }
 }
 
