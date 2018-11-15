@@ -12,7 +12,23 @@
 		8251553C219DCC8A0018B760 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8251553A219DCC8A0018B760 /* Main.storyboard */; };
 		8251553E219DCC8C0018B760 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8251553D219DCC8C0018B760 /* Assets.xcassets */; };
 		82515541219DCC8C0018B760 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8251553F219DCC8C0018B760 /* LaunchScreen.storyboard */; };
+		82CECEAB219DE34000A20408 /* PickImageAlert.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82CECEAA219DE34000A20408 /* PickImageAlert.framework */; };
+		82CECEAC219DE34000A20408 /* PickImageAlert.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 82CECEAA219DE34000A20408 /* PickImageAlert.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		82CECEAD219DE34000A20408 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				82CECEAC219DE34000A20408 /* PickImageAlert.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		82515533219DCC8A0018B760 /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -22,6 +38,7 @@
 		8251553D219DCC8C0018B760 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		82515540219DCC8C0018B760 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		82515542219DCC8C0018B760 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		82CECEAA219DE34000A20408 /* PickImageAlert.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PickImageAlert.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +46,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				82CECEAB219DE34000A20408 /* PickImageAlert.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -38,6 +56,7 @@
 		8251552A219DCC8A0018B760 = {
 			isa = PBXGroup;
 			children = (
+				82CECEAA219DE34000A20408 /* PickImageAlert.framework */,
 				82515535219DCC8A0018B760 /* Example */,
 				82515534219DCC8A0018B760 /* Products */,
 			);
@@ -74,6 +93,7 @@
 				8251552F219DCC8A0018B760 /* Sources */,
 				82515530219DCC8A0018B760 /* Frameworks */,
 				82515531219DCC8A0018B760 /* Resources */,
+				82CECEAD219DE34000A20408 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -213,7 +233,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -268,7 +288,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -283,6 +303,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Example/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -300,6 +324,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Example/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
