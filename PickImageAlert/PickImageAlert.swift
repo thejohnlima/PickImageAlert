@@ -49,7 +49,7 @@ open class PickImageAlert: NSObject {
 
   // MARK: - Constants
   private let alertViewHeight: CGFloat = 360
-  private let alertActionViewHeight: CGFloat = 57
+  private let alertActionViewHeight: CGFloat = UIDevice.current.isPad ? 44 : 57
 
   // MARK: - Properties
   internal weak var targetController: UIViewController?
@@ -58,7 +58,7 @@ open class PickImageAlert: NSObject {
   internal var alertController: PIAlertController?
   internal var fetchedImages: [UIImage] = []
 
-  internal lazy var photosView: PICollectionImages = {
+  internal lazy var photosView: PICollectionImages? = {
     let view: PICollectionImages = UIView.fromNib()
     view.translatesAutoresizingMaskIntoConstraints = false
     view.backgroundColor = .clear
@@ -106,16 +106,21 @@ open class PickImageAlert: NSObject {
 
     alertController?.popoverPresentationController?.sourceView = target.view
 
-    alertController?.didAppear = { _ in
-      self.addObservers()
+    alertController?.willChangeOrientation = {
+      self.photosView?.collectionViewSizeChanged = true
     }
 
-    alertController?.didDisappear = { _ in
-      self.removeObservers()
+    alertController?.willLayoutSubviews = {
+      if self.photosView?.collectionViewSizeChanged == true {
+        self.photosView?.collectionView.collectionViewLayout.invalidateLayout()
+      }
     }
 
-    alertController?.willChangeOrientation = { _ in
-      self.photosView.collectionView.collectionViewLayout.invalidateLayout()
+    alertController?.didLayoutSubviews = {
+      if self.photosView?.collectionViewSizeChanged == true {
+        self.photosView?.collectionViewSizeChanged = false
+        self.photosView?.collectionView.performBatchUpdates(nil)
+      }
     }
   }
 
@@ -140,9 +145,9 @@ open class PickImageAlert: NSObject {
   private func setupAlertCollection(_ images: [UIImage]) {
     fetchedImages = images
     DispatchQueue.main.async { [weak self] in
-      guard let `self` = self else { return }
+      guard let `self` = self, let photosView = self.photosView else { return }
       let index: Int = self.alertController?.view.subviews.count ?? 1 - 1
-      self.alertController?.view.insertSubview(self.photosView, at: index)
+      self.alertController?.view.insertSubview(photosView, at: index)
       self.setupPhotosView()
       self.setupAlertViewConstraints()
     }
@@ -178,18 +183,18 @@ open class PickImageAlert: NSObject {
   private func setupPhotosView() {
     guard let alert = alertController else { return }
 
-    photosView.topAnchor.constraint(equalTo: alert.view.topAnchor, constant: 45).isActive = true
-    photosView.rightAnchor.constraint(equalTo: alert.view.rightAnchor, constant: -10).isActive = true
-    photosView.leftAnchor.constraint(equalTo: alert.view.leftAnchor, constant: 10).isActive = true
+    photosView?.topAnchor.constraint(equalTo: alert.view.topAnchor, constant: 45).isActive = true
+    photosView?.rightAnchor.constraint(equalTo: alert.view.rightAnchor, constant: -10).isActive = true
+    photosView?.leftAnchor.constraint(equalTo: alert.view.leftAnchor, constant: 10).isActive = true
 
     let constraintBottomValue = (CGFloat(alert.actions.count) * alertActionViewHeight) + 16
 
-    photosView.bottomAnchor
+    photosView?.bottomAnchor
       .constraint(equalTo: alert.view.bottomAnchor, constant: -constraintBottomValue).isActive = true
 
-    photosView.viewModel.images = fetchedImages
-    photosView.delegate = self
-    photosView.collectionView.reloadData()
+    photosView?.viewModel.images = fetchedImages
+    photosView?.delegate = self
+    photosView?.collectionView.reloadData()
   }
 
   private func presentAlert() {
@@ -278,24 +283,6 @@ open class PickImageAlert: NSObject {
     }
 
     success(result)
-  }
-
-  private func addObservers() {
-    UIDevice.current.beginGeneratingDeviceOrientationNotifications()
-    NotificationCenter.default.addObserver(self,
-                                           selector: #selector(deviceOrientationChanged),
-                                           name: UIDevice.orientationDidChangeNotification,
-                                           object: nil)
-  }
-
-  private func removeObservers() {
-    UIDevice.current.endGeneratingDeviceOrientationNotifications()
-    NotificationCenter.default.removeObserver(self, name: UIDevice.orientationDidChangeNotification, object: nil)
-  }
-
-  @objc
-  private func deviceOrientationChanged() {
-    setupPhotosView()
   }
 }
 

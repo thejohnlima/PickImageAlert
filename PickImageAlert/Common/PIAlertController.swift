@@ -11,30 +11,42 @@ import UIKit
 public class PIAlertController: UIAlertController {
 
   // MARK: - Properties
-  internal var willAppear: ((_ alert: UIAlertController) -> Void)?
-  internal var didAppear: ((_ alert: UIAlertController) -> Void)?
-  internal var didDisappear: ((_ alert: UIAlertController) -> Void)?
-  internal var willChangeOrientation: ((_ alert: UIAlertController) -> Void)?
+  internal var willAppear: (() -> Void)?
+  internal var didAppear: (() -> Void)?
+  internal var didDisappear: (() -> Void)?
+  internal var willChangeOrientation: (() -> Void)?
+  internal var willLayoutSubviews: (() -> Void)?
+  internal var didLayoutSubviews: (() -> Void)?
 
   // MARK: - View LifeCycle
   override public func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
-    willAppear?(self)
+    willAppear?()
   }
 
   override public func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
-    didAppear?(self)
+    didAppear?()
   }
 
   override public func viewDidDisappear(_ animated: Bool) {
     super.viewDidDisappear(animated)
-    didDisappear?(self)
+    didDisappear?()
+  }
+
+  override public func viewWillLayoutSubviews() {
+    super.viewWillLayoutSubviews()
+    willLayoutSubviews?()
+  }
+
+  override public func viewDidLayoutSubviews() {
+    super.viewDidLayoutSubviews()
+    didLayoutSubviews?()
   }
 
   override public func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
     super.viewWillTransition(to: size, with: coordinator)
-    willChangeOrientation?(self)
+    willChangeOrientation?()
   }
 }
 
