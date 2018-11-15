@@ -10,6 +10,6 @@ Pod::Spec.new do |s|
   s.social_media_url   = "https://twitter.com/johncarloslima"
   s.platform           = :ios, "11.0"
   s.source             = { :git => "https://github.com/limadeveloper/PickImageAlert.git", :tag => "#{s.version}" }
-  s.source_files       = "PickImageAlert/**/*"
+  s.source_files       = "Framework/PickImageAlert/**/*"
   s.swift_version      = '4.2'
 end
