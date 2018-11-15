@@ -4,7 +4,7 @@ Pod::Spec.new do |s|
   s.summary            = "Photos or camera access using the system alert controller"
   s.summary            = "PickImageAlert provides a list of your photos in your alert controller with three alert actions"
   s.homepage           = "https://github.com/limadeveloper/PickImageAlert"
-  s.screenshots        = "https://github.com/limadeveloper/PickImageAlert/Example/Resources/PickImageAlert.gif"
+  s.screenshots        = "https://github.com/limadeveloper/PickImageAlert/blob/develop/Example/Resources/PickImageAlert.gif"
   s.license            = "MIT"
   s.author             = { "John Lima" => "john.limadeveloper@icloud.com" }
   s.social_media_url   = "https://twitter.com/johncarloslima"
