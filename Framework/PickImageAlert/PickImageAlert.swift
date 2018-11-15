@@ -85,7 +85,7 @@ open class PickImageAlert: NSObject {
     targetController = target
 
     alertController = PIAlertController(title: alertProperties.title,
-                                        message: alertProperties.message,
+                                        message: nil,
                                         preferredStyle: alertProperties.style)
 
     pickerController.delegate = self

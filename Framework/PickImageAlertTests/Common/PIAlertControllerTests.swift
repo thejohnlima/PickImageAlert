@@ -24,13 +24,12 @@ class PIAlertControllerTests: XCTestCase {
       cameraActionTitle: "Camera",
       gallaryActionTitle: "Gallary",
       cancelActionTitle: "Cancel",
-      message: "The latest photos from your library",
       style: .actionSheet
     )
 
     alertController = PIAlertController(
       title: alertProperties?.title,
-      message: alertProperties?.message,
+      message: nil,
       preferredStyle: alertProperties?.style ?? .alert
     )
   }
@@ -44,7 +43,6 @@ class PIAlertControllerTests: XCTestCase {
   // MARK: - Tests
   func testSetupAlertPropertiesSuccess() {
     XCTAssertEqual(alertProperties?.title, "Choose Photo")
-    XCTAssertEqual(alertProperties?.message, "The latest photos from your library")
     XCTAssertEqual(alertProperties?.cameraActionTitle, "Camera")
     XCTAssertEqual(alertProperties?.gallaryActionTitle, "Gallary")
     XCTAssertEqual(alertProperties?.cancelActionTitle, "Cancel")
@@ -53,7 +51,7 @@ class PIAlertControllerTests: XCTestCase {
 
   func testSetupAlertControllerSuccess() {
     XCTAssertEqual(alertController?.title, "Choose Photo")
-    XCTAssertEqual(alertController?.message, "The latest photos from your library")
+    XCTAssertNil(alertController?.message)
     XCTAssertEqual(alertController?.preferredStyle, .actionSheet)
   }
 }

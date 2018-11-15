@@ -55,7 +55,6 @@ extension PIAlertController {
   public struct AlertProperties {
 
     public var title: String?
-    public var message: String?
     public var style: Style
     public var cameraActionTitle: String
     public var gallaryActionTitle: String
@@ -65,7 +64,6 @@ extension PIAlertController {
                 cameraActionTitle: String,
                 gallaryActionTitle: String,
                 cancelActionTitle: String,
-                message: String? = nil,
                 style: Style = .actionSheet) {
 
       var alertStyle: Style {
@@ -76,7 +74,6 @@ extension PIAlertController {
       }
 
       self.title = title
-      self.message = message
       self.style = alertStyle
       self.cameraActionTitle = cameraActionTitle
       self.gallaryActionTitle = gallaryActionTitle

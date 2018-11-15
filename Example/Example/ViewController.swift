@@ -7,13 +7,32 @@
 //
 
 import UIKit
+import PickImageAlert
 
 class ViewController: UIViewController {
+
+  // MARK: - Properties
+  private var pickImageAlert: PickImageAlert?
 
   // MARK: - View LifeCycle
   override func viewDidLoad() {
     super.viewDidLoad()
+
+    let properties = PIAlertController.AlertProperties(
+      title: "Pick Image",
+      cameraActionTitle: "Camera",
+      gallaryActionTitle: "Gallary",
+      cancelActionTitle: "Cancel",
+      style: .actionSheet
+    )
+
+    pickImageAlert = PickImageAlert(with: self, alertProperties: properties)
   }
 
-  // MARK: - Private Methods
+  // MARK: - Actions
+  @IBAction private func pickImage(sender: Any?) {
+    pickImageAlert?.pickImage { image in
+      print("📷 selected photo: \(String(describing: image))")
+    }
+  }
 }
