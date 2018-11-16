@@ -60,7 +60,7 @@ Change log is [here](https://github.com/limadeveloper/PickImageAlert/blob/master
 
 - If you found a bug, open an issue.
 - If you have a feature request, open an issue.
-- If you want to contribute, submit a pull request.:muscle:
+- If you want to contribute, submit a pull request. 👨🏻‍💻
 
 ## License
 
