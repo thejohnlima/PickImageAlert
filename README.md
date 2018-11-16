@@ -1,37 +1,14 @@
 # PickImageAlert
 
-PickImageAlert provides a list of your photos in your alert controller with three alert actions
-
-![PickImageAlert](Documents/PickImageAlert.gif)
-
-```Swift
-let properties = PIAlertController.AlertProperties(
-    title: "Pick Image",
-    cameraActionTitle: "Camera",
-    gallaryActionTitle: "Gallary",
-    cancelActionTitle: "Cancel",
-    style: .actionSheet
-)
-
-let pickImageAlert = PickImageAlert(with: self, alertProperties: properties)
-
-pickImageAlert.pickImage { image in
-    print("📷 selected photo: \(image)")
-}
-```
-
 [![GitHub release](https://img.shields.io/github/release/limadeveloper/PickImageAlert.svg)](https://github.com/limadeveloper/PickImageAlert/releases)
 ![Language](https://img.shields.io/badge/language-Swift%204.2-orange.svg)
 [![CocoaPods](https://img.shields.io/badge/Cocoa%20Pods-✓-4BC51D.svg?style=flat)](https://cocoapods.org/pods/PickImageAlert)
-[![CocoaPodsDL](https://img.shields.io/cocoapods/dt/PickImageAlert.svg)](https://cocoapods.org/pods/PickImageAlert)
+[![License](https://img.shields.io/cocoapods/l/PickImageAlert.svg?style=flat)](http://cocoapods.org/pods/PickImageAlert)
+[![Platform](https://img.shields.io/cocoapods/p/PickImageAlert.svg?style=flat)](http://cocoapods.org/pods/PickImageAlert)
 
-## Feature
+PickImageAlert provides a list of your photos in your alert controller with three alert actions
 
-- Can change title and actions text;
-- Can access photo library;
-- Can take photo using the camera;
-- Auto layout support;
-- iPad support;
+![PickImageAlert](Documents/PickImageAlert.gif)
 
 ## Requirements
 
@@ -52,9 +29,43 @@ pod 'PickImageAlert', '~> 1.0'
 
 and run `pod install`
 
-## Change log
+## How to use
 
-Change log is [here](https://github.com/limadeveloper/PickImageAlert/blob/master/CHANGELOG.md).
+Import library in your swift file:
+
+```Swift
+import PickImageAlert
+```
+
+Setup PickImageAlert in your action:
+
+```Swift
+let properties = PIAlertController.AlertProperties(
+    title: "Pick Image",
+    cameraActionTitle: "Camera",
+    gallaryActionTitle: "Gallary",
+    cancelActionTitle: "Cancel",
+    style: .actionSheet
+)
+
+let pickImageAlert = PickImageAlert(with: self, alertProperties: properties)
+
+pickImageAlert.pickImage { image in
+    print("📷 selected photo: \(image)")
+}
+```
+
+And don't forget to setup your info.plist file to require photo library access:
+
+![plist](Documents/plist_photos_access.png)
+
+## Feature
+
+- Can change title and actions text;
+- Can access photo library;
+- Can take photo using the camera;
+- Auto layout support;
+- iPad support;
 
 ## Communication
 
