@@ -1,0 +1,16 @@
+PODS:
+  - PickImageAlert (1.0.0)
+
+DEPENDENCIES:
+  - PickImageAlert (from `../`)
+
+EXTERNAL SOURCES:
+  PickImageAlert:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  PickImageAlert: ba09ee4900bacc8291a61e6b7e2d5bc6459189a5
+
+PODFILE CHECKSUM: a1cb9dbd8c1d3fec1b5588f798c10b402a841be8
+
+COCOAPODS: 1.5.3
