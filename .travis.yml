@@ -1,10 +1,8 @@
 language: objective-c
 osx_image: xcode10.1
-cache: cocoapods
-podfile: Example/Podfile
 before_install:
-- gem install cocoapods --pre # Since Travis is not always on latest version
-- pod install --project-directory=Example
+- set -o pipefail
+- xcrun simctl boot "iPhone 7" || echo "(Pre)Launched the simulator."
 script:
-- set -o pipefail && xcodebuild test -workspace Example/Example.xcworkspace -scheme Example-Example -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 7' ONLY_ACTIVE_ARCH=NO | xcpretty
+- travis_retry xcodebuild -project Framework.xcodeproj -scheme "PickImageAlert" -destination "platform=iOS Simulator,name=iPhone 7" -enableCodeCoverage YES ONLY_ACTIVE_ARCH=YES test | xcpretty -c
 - pod lib lint
