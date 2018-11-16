@@ -4,5 +4,5 @@ before_install:
 - set -o pipefail
 - xcrun simctl boot "iPhone 7" || echo "(Pre)Launched the simulator."
 script:
-- travis_retry xcodebuild -project PickImageAlert.xcodeproj -scheme "PickImageAlert" -destination "platform=iOS Simulator,name=iPhone 7" -enableCodeCoverage YES ONLY_ACTIVE_ARCH=YES test | xcpretty -c
+- travis_retry xcodebuild -project Framework/PickImageAlert.xcodeproj -scheme "PickImageAlert" -destination "platform=iOS Simulator,name=iPhone 7" -enableCodeCoverage YES ONLY_ACTIVE_ARCH=YES test | xcpretty -c
 - pod lib lint
