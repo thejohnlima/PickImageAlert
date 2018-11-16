@@ -3,7 +3,7 @@
 //  PickImageAlert
 //
 //  Created by John Lima on 10/11/18.
-//  Copyright © 2018 jlimadeveloper. All rights reserved.
+//  Copyright © 2018 limadeveloper. All rights reserved.
 //
 
 import UIKit

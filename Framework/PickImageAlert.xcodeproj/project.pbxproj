@@ -257,7 +257,7 @@
 				CLASSPREFIX = PI;
 				LastSwiftUpdateCheck = 1010;
 				LastUpgradeCheck = 1010;
-				ORGANIZATIONNAME = jlimadeveloper;
+				ORGANIZATIONNAME = limadeveloper;
 				TargetAttributes = {
 					827A8AC32197A5B4002150E2 = {
 						CreatedOnToolsVersion = 10.1;
@@ -589,7 +589,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.jlimadeveloper.ios.PickImageAlertTests;
+				PRODUCT_BUNDLE_IDENTIFIER = ios.pickimagealerttests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
@@ -609,7 +609,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.jlimadeveloper.ios.PickImageAlertTests;
+				PRODUCT_BUNDLE_IDENTIFIER = ios.pickimagealerttests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";

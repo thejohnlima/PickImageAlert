@@ -3,7 +3,7 @@
 //  PickImageAlert
 //
 //  Created by John Lima on 10/11/18.
-//  Copyright © 2018 jlimadeveloper. All rights reserved.
+//  Copyright © 2018 limadeveloper. All rights reserved.
 //
 
 import Photos
@@ -49,7 +49,6 @@ open class PickImageAlert: NSObject {
 
   // MARK: - Constants
   private let alertViewHeight: CGFloat = 360
-  private let alertActionViewHeight: CGFloat = UIDevice.current.isPad ? 44 : 57
 
   // MARK: - Properties
   internal weak var targetController: UIViewController?
@@ -180,6 +179,10 @@ open class PickImageAlert: NSObject {
     alertController?.view.addConstraint(constraintHeight)
   }
 
+  private func getAlertActionViewHeight() -> CGFloat {
+    return alertController?.preferredStyle == .alert ? 44 : 57
+  }
+
   private func setupPhotosView() {
     guard let alert = alertController else { return }
 
@@ -187,7 +190,7 @@ open class PickImageAlert: NSObject {
     photosView?.rightAnchor.constraint(equalTo: alert.view.rightAnchor, constant: -10).isActive = true
     photosView?.leftAnchor.constraint(equalTo: alert.view.leftAnchor, constant: 10).isActive = true
 
-    let constraintBottomValue = (CGFloat(alert.actions.count) * alertActionViewHeight) + 16
+    let constraintBottomValue = (CGFloat(alert.actions.count) * getAlertActionViewHeight()) + 16
 
     photosView?.bottomAnchor
       .constraint(equalTo: alert.view.bottomAnchor, constant: -constraintBottomValue).isActive = true

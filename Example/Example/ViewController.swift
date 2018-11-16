@@ -23,7 +23,7 @@ class ViewController: UIViewController {
       cameraActionTitle: "Camera",
       gallaryActionTitle: "Gallary",
       cancelActionTitle: "Cancel",
-      style: .actionSheet
+      style: .alert
     )
 
     pickImageAlert = PickImageAlert(with: self, alertProperties: properties)
