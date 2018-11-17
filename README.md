@@ -19,7 +19,7 @@ PickImageAlert provides a list of your photos in your alert controller with thre
 
 ### CocoaPods
 
-**PickImageAlert** is available through [CocoaPods](http://cocoapods.org). To install
+**PickImageAlert** is available through [CocoaPods](https://cocoapods.org/pods/PickImageAlert). To install
 it, simply add the following line to your Podfile:
 
 ```ruby
