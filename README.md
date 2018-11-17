@@ -8,7 +8,7 @@
 
 PickImageAlert provides a list of your photos in your alert controller with three alert actions
 
-![PickImageAlert](Documents/PickImageAlert.gif)
+![PickImageAlert](https://raw.githubusercontent.com/limadeveloper/PickImageAlert/master/Documents/PickImageAlert.gif)
 
 ## Requirements
 
@@ -57,7 +57,7 @@ pickImageAlert.pickImage { image in
 
 And don't forget to setup your info.plist file to require photo library access:
 
-![plist](Documents/plist_photos_access.png)
+![plist](https://raw.githubusercontent.com/limadeveloper/PickImageAlert/master/Documents/plist_photos_access.png)
 
 ## Feature
 
