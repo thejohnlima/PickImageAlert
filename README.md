@@ -6,7 +6,7 @@
 [![License](https://img.shields.io/cocoapods/l/PickImageAlert.svg?style=flat)](http://cocoapods.org/pods/PickImageAlert)
 [![Platform](https://img.shields.io/cocoapods/p/PickImageAlert.svg?style=flat)](http://cocoapods.org/pods/PickImageAlert)
 
-PickImageAlert provides a list of your photos in your alert controller with three alert actions
+PickImageAlert provides a list of your photos using the system alert controller. Also it's possible to take a photo and access the photo library.
 
 ![PickImageAlert](https://raw.githubusercontent.com/limadeveloper/PickImageAlert/master/Documents/PickImageAlert.gif)
 
