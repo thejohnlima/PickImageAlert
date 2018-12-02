@@ -1,0 +1,10 @@
+# .slather.yml
+
+input_format: profdata
+coverage_service: html
+scheme: PickImageAlert
+workspace: PickImageAlert.xcworkspace
+xcodeproj: PickImageAlert.xcodeproj
+output_directory: coverage
+ignore:
+  - "ThirdParty/*"
