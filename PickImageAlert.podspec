@@ -6,7 +6,7 @@ Pod::Spec.new do |s|
   s.requires_arc       = true
   s.homepage           = "https://github.com/limadeveloper/PickImageAlert"
   s.license            = "MIT"
-  s.author             = { "John Lima" => "john.limadeveloper@icloud.com" }
+  s.author             = { "John Lima" => "john.limadeveloper@gmail.com" }
   s.social_media_url   = "https://twitter.com/johncarloslima"
   s.platform           = :ios, "11.0"
   s.source             = { :git => "https://github.com/limadeveloper/PickImageAlert.git", :tag => "#{s.version}" }
@@ -14,4 +14,5 @@ Pod::Spec.new do |s|
   s.source_files       = "Framework/PickImageAlert/**/*.{swift}"
   s.resources          = "Framework/PickImageAlert/**/*.{png,jpeg,jpg,storyboard,xib,xcassets}"
   s.swift_version      = "4.2"
+  s.dependency 'SwiftLint', '~> 0.28'
 end

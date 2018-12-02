@@ -23,6 +23,7 @@ xcuserdata/
 *.xcscmblueprint
 .DS_Store
 .DS_Store?
+coverage
 
 ## Obj-C/Swift specific
 *.hmap
@@ -61,7 +62,7 @@ Carthage/Build
 # screenshots whenever they are needed.
 # For more information about the recommended setup visit:
 # https://docs.fastlane.tools/best-practices/source-control/#source-control
-fastlane/report.xml
-fastlane/Preview.html
 fastlane/screenshots
-fastlane/test_output
+fastlane/README.md
+report.xml
+test_output

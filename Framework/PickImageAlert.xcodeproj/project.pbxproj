@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3FE3037A78F90C293A9B25EB /* Pods_PickImageAlert.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51939E122C4EEEA5A498D67E /* Pods_PickImageAlert.framework */; };
+		4A80DBB61C0EDF44E51E2107 /* Pods_PickImageAlertTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7908FFE83F743369F2FB9EA /* Pods_PickImageAlertTests.framework */; };
 		823BD78421985F7B003EA826 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 823BD78621985F7B003EA826 /* Localizable.strings */; };
 		823BD789219860EE003EA826 /* Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823BD788219860EE003EA826 /* Localizable.swift */; };
 		823BD78E2198C473003EA826 /* PIAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823BD78D2198C473003EA826 /* PIAlertController.swift */; };
@@ -41,6 +43,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		47B78C62AD38BDBBA4586037 /* Pods-PickImageAlertTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PickImageAlertTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PickImageAlertTests/Pods-PickImageAlertTests.debug.xcconfig"; sourceTree = "<group>"; };
+		484C61613EF3F6BBF8780275 /* Pods-PickImageAlert.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PickImageAlert.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PickImageAlert/Pods-PickImageAlert.debug.xcconfig"; sourceTree = "<group>"; };
+		51939E122C4EEEA5A498D67E /* Pods_PickImageAlert.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PickImageAlert.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		823BD78521985F7B003EA826 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		823BD788219860EE003EA826 /* Localizable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localizable.swift; sourceTree = "<group>"; };
 		823BD78D2198C473003EA826 /* PIAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PIAlertController.swift; sourceTree = "<group>"; };
@@ -65,6 +70,9 @@
 		828C26522199198C0055EDD6 /* ExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionTests.swift; sourceTree = "<group>"; };
 		828C265421991B140055EDD6 /* PickImageAlertTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickImageAlertTests.swift; sourceTree = "<group>"; };
 		828C265621991CAA0055EDD6 /* MockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockViewController.swift; sourceTree = "<group>"; };
+		A7908FFE83F743369F2FB9EA /* Pods_PickImageAlertTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PickImageAlertTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F750C26147FDBC2990F1BCB7 /* Pods-PickImageAlert.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PickImageAlert.release.xcconfig"; path = "Pods/Target Support Files/Pods-PickImageAlert/Pods-PickImageAlert.release.xcconfig"; sourceTree = "<group>"; };
+		F7D0B486898426F83A95027A /* Pods-PickImageAlertTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PickImageAlertTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PickImageAlertTests/Pods-PickImageAlertTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3FE3037A78F90C293A9B25EB /* Pods_PickImageAlert.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,18 +89,41 @@
 			buildActionMask = 2147483647;
 			files = (
 				827A8ACE2197A5B4002150E2 /* PickImageAlert.framework in Frameworks */,
+				4A80DBB61C0EDF44E51E2107 /* Pods_PickImageAlertTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1D69AD61654B8B6861BF24B3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				51939E122C4EEEA5A498D67E /* Pods_PickImageAlert.framework */,
+				A7908FFE83F743369F2FB9EA /* Pods_PickImageAlertTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4724B391A55D7F118361EF84 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				484C61613EF3F6BBF8780275 /* Pods-PickImageAlert.debug.xcconfig */,
+				F750C26147FDBC2990F1BCB7 /* Pods-PickImageAlert.release.xcconfig */,
+				47B78C62AD38BDBBA4586037 /* Pods-PickImageAlertTests.debug.xcconfig */,
+				F7D0B486898426F83A95027A /* Pods-PickImageAlertTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		827A8ABA2197A5B4002150E2 = {
 			isa = PBXGroup;
 			children = (
 				827A8AC62197A5B4002150E2 /* PickImageAlert */,
 				827A8AD12197A5B4002150E2 /* PickImageAlertTests */,
 				827A8AC52197A5B4002150E2 /* Products */,
+				4724B391A55D7F118361EF84 /* Pods */,
+				1D69AD61654B8B6861BF24B3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -214,6 +246,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 827A8AD82197A5B4002150E2 /* Build configuration list for PBXNativeTarget "PickImageAlert" */;
 			buildPhases = (
+				D4ABD3672160923EA7F0A2AA /* [CP] Check Pods Manifest.lock */,
 				827A8ABF2197A5B4002150E2 /* Headers */,
 				827A8AC02197A5B4002150E2 /* Sources */,
 				827A8AC12197A5B4002150E2 /* Frameworks */,
@@ -233,6 +266,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 827A8ADB2197A5B4002150E2 /* Build configuration list for PBXNativeTarget "PickImageAlertTests" */;
 			buildPhases = (
+				7439D0739630034AF38FD5CA /* [CP] Check Pods Manifest.lock */,
 				827A8AC92197A5B4002150E2 /* Sources */,
 				827A8ACA2197A5B4002150E2 /* Frameworks */,
 				827A8ACB2197A5B4002150E2 /* Resources */,
@@ -309,6 +343,28 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		7439D0739630034AF38FD5CA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PickImageAlertTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		823BD78A21986EB2003EA826 /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -325,7 +381,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
 		};
 		823BD78B21986EF4003EA826 /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -343,7 +399,29 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
+		};
+		D4ABD3672160923EA7F0A2AA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PickImageAlert-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -526,6 +604,7 @@
 		};
 		827A8AD92197A5B4002150E2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 484C61613EF3F6BBF8780275 /* Pods-PickImageAlert.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
@@ -553,6 +632,7 @@
 		};
 		827A8ADA2197A5B4002150E2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F750C26147FDBC2990F1BCB7 /* Pods-PickImageAlert.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
@@ -579,6 +659,7 @@
 		};
 		827A8ADC2197A5B4002150E2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 47B78C62AD38BDBBA4586037 /* Pods-PickImageAlertTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
@@ -599,6 +680,7 @@
 		};
 		827A8ADD2197A5B4002150E2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F7D0B486898426F83A95027A /* Pods-PickImageAlertTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
