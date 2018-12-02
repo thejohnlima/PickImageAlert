@@ -6,6 +6,7 @@ before_install:
 script:
 - cd Framework
 - bundle install
+- bundle exec pod repo update
 - bundle exec fastlane build
 - cd ..
 - pod lib lint
