@@ -5,7 +5,8 @@ before_install:
 - xcrun simctl boot "iPhone XR" || echo "(Pre)Launched the simulator."
 script:
 - cd Framework
-- fastlane build
+- bundle install
+- bundle exec fastlane build
 - cd ..
 - pod lib lint
 - pod spec lint
