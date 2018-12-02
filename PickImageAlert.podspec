@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name               = "PickImageAlert"
-  s.version            = "1.0.2"
+  s.version            = "1.0.3"
   s.summary            = "Photos or camera access using the system alert controller"
   s.description        = "PickImageAlert provides a list of your photos in your alert controller with three alert actions"
   s.requires_arc       = true
