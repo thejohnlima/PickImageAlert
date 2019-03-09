@@ -9,7 +9,7 @@
 [![License](https://img.shields.io/cocoapods/l/PickImageAlert.svg?style=flat)](https://raw.githubusercontent.com/limadeveloper/PickImageAlert/master/LICENSE)
 [![Donate](https://img.shields.io/badge/Donate-PayPal-blue.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=NZN6YS87V9ZZW&currency_code=BRL&source=url)
 
-PickImageAlert provides a list of your photos using the system alert controller. Also it's possible to take a photo and access the photo library.
+**PickImageAlert** provides a list of your photos using the system alert controller. Also it's possible to take a photo and access the photo library.
 
 ![PickImageAlert](https://raw.githubusercontent.com/limadeveloper/PickImageAlert/master/Documents/PickImageAlert.gif)
 
