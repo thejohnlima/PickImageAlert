@@ -11,3 +11,5 @@ script:
 - cd ..
 - pod lib lint
 - pod spec lint
+after_success:
+  - bash <(curl -s https://codecov.io/bash) -t e0abdf28-bcb2-4005-bf49-6fe3642b34fc -J PickImageAlert

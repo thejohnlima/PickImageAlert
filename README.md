@@ -2,6 +2,7 @@
 
 [![GitHub release](https://img.shields.io/github/release/limadeveloper/PickImageAlert.svg)](https://github.com/limadeveloper/PickImageAlert/releases)
 [![Build Status](https://travis-ci.org/limadeveloper/PickImageAlert.svg?branch=master)](https://travis-ci.org/limadeveloper/PickImageAlert)
+[![codecov.io](https://codecov.io/gh/codecov/PickImageAlert/branch/master/graphs/badge.svg)](https://codecov.io/gh/codecov/PickImageAlert/branch/master)
 [![CocoaPods](https://img.shields.io/badge/Cocoa%20Pods-✓-4BC51D.svg?style=flat)](https://cocoapods.org/pods/PickImageAlert)
 [![Language](https://img.shields.io/badge/language-Swift%204.2-orange.svg)](https://developer.apple.com/swift/)
 [![Platform](https://img.shields.io/cocoapods/p/PickImageAlert.svg?style=flat)](https://developer.apple.com/ios/)
