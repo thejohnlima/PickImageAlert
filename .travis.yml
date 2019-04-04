@@ -9,7 +9,7 @@ script:
 - bundle exec pod repo update
 - bundle exec fastlane build
 - cd ..
-- pod lib lint
-- pod spec lint
+- pod lib lint --allow-warnings
+- pod spec lint --allow-warnings
 after_success:
   - bash <(curl -s https://codecov.io/bash) -t e0abdf28-bcb2-4005-bf49-6fe3642b34fc -J PickImageAlert
