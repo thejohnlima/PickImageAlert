@@ -6,7 +6,7 @@
 [![CocoaPods](https://img.shields.io/badge/Cocoa%20Pods-✓-4BC51D.svg?style=flat)](https://cocoapods.org/pods/PickImageAlert)
 [![Language](https://img.shields.io/badge/language-Swift%204.2-orange.svg)](https://developer.apple.com/swift/)
 [![Platform](https://img.shields.io/cocoapods/p/PickImageAlert.svg?style=flat)](https://developer.apple.com/ios/)
-[![License](https://img.shields.io/cocoapods/l/PickImageAlert.svg?style=flat)](https://raw.githubusercontent.com/limadeveloper/PickImageAlert/master/LICENSE)
+[![License](https://img.shields.io/github/license/limadeveloper/PickImageAlert.svg)](https://raw.githubusercontent.com/limadeveloper/PickImageAlert/master/LICENSE)
 [![Donate](https://img.shields.io/badge/Donate-PayPal-blue.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=NZN6YS87V9ZZW&currency_code=BRL&source=url)
 
 **PickImageAlert** provides a list of your photos using the system alert controller. Also it's possible to take a photo and access the photo library.
