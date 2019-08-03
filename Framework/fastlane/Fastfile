@@ -39,9 +39,9 @@ platform :ios do
       derived_data_path: "DerivedData",
       fail_build: false,
       suppress_xcode_output: false,
-      device: "iPhone 8",
+      destination: "platform=iOS Simulator,name=iPhone 8,OS=13.0",
       configuration: "Debug",
-      output_types: "html"
+      output_types: "junit"
     )
   end
 
@@ -62,7 +62,6 @@ platform :ios do
   # functions
   # -----------------------
   def prepare_reports()
-    trainer(output_directory: "reports")
     failed_tests = Integer(get_number_of_tests().failed)
     total_tests = Integer(get_number_of_tests().total)
     if failed_tests > 0 && total_tests > 0
@@ -108,7 +107,7 @@ platform :ios do
   end
 
   def get_number_of_tests()
-    path = '../reports/TestSummaries.xml'
+    path = '../reports/report.junit'
     doc = Nokogiri::XML(File.open(path))
     tests = doc.xpath("//testsuite")
     
@@ -124,7 +123,7 @@ platform :ios do
   end
 
   def get_failed_tests()
-    path = '../reports/TestSummaries.xml'
+    path = '../reports/report.junit'
     doc = Nokogiri::XML(File.open(path))
 
     node_tree = doc.css('testcase')
@@ -168,10 +167,8 @@ platform :ios do
   end
 
   def on_success()
-
   end
 
   def on_error(exception)
-
   end
 end

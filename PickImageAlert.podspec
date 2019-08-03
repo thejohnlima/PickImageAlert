@@ -13,6 +13,6 @@ Pod::Spec.new do |s|
   s.framework          = "UIKit"
   s.source_files       = "Framework/PickImageAlert/**/*.{swift}"
   s.resources          = "Framework/PickImageAlert/**/*.{png,jpeg,jpg,storyboard,xib,xcassets}"
-  s.swift_version      = "5.1"
+  s.swift_version      = "5.0"
   s.dependency 'SwiftLint'
 end
