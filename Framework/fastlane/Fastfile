@@ -10,89 +10,168 @@
 #     https://docs.fastlane.tools/plugins/available-plugins
 #
 
-min_fastlane_version("2.108.0")
 default_platform(:ios)
 
+fastlane_require 'nokogiri'
+
+TestResult = Struct.new(:total, :failed)
+
 platform :ios do
-  desc "Build and run tests"
+
+  # -----------------------
+  # before all lanes
+  # -----------------------
+  before_all do |lane|
+    sh("if [ -d ../reports ]; then rm -Rf ../reports; fi")
+    sh("if [ -f *.xml ]; then rm -f *.xml; fi")
+    sh("bundle exec pod install --repo-update")
+  end
+
+  # -----------------------
+  # lanes
+  # -----------------------
+  lane :tests do
+    scan(
+      xcargs: "ONLY_ACTIVE_ARCH=YES",
+      scheme: "PickImageAlert",
+      code_coverage: true,
+      output_directory: "reports",
+      derived_data_path: "DerivedData",
+      fail_build: false,
+      suppress_xcode_output: false,
+      device: "iPhone 8",
+      configuration: "Debug",
+      output_types: "html"
+    )
+  end
+
   lane :build do
-    begin
-      test_lane()
-      success_build()
-    rescue => exception
-      on_error(exception)
+    tests
+    run_lint()
+    prepare_reports()
+  end
+
+  lane :full_build do
+    tests
+    run_lint()
+    run_coverage()
+    prepare_reports()
+  end
+
+  # -----------------------
+  # functions
+  # -----------------------
+  def prepare_reports()
+    trainer(output_directory: "reports")
+    failed_tests = Integer(get_number_of_tests().failed)
+    total_tests = Integer(get_number_of_tests().total)
+    if failed_tests > 0 && total_tests > 0
+      error_message = "❌ Failed tests"
+      on_error(error_message)
+    elsif failed_tests == 0 && total_tests == 0
+      error_message = "⚠️ No tests available"
+      on_error(error_message)
+    else
+      on_success()
     end
   end
-end
 
-### Methods
-def test_lane
-  cocoapods
-  clear_derived_data
-  scan
-  slather
-  swiftlint(
-    mode: :lint,      
-    output_file: "swiftlint.result.json", 
-    executable: "./Pods/SwiftLint/swiftlint"
-  )
-end
+  def run_lint()
+    swiftlint(
+      output_file: "reports/swiftlint.txt", 
+      ignore_exit_status: true,
+      executable: "./Pods/SwiftLint/swiftlint"
+    )
+  end
 
-def on_error(exception)
-  slack(
-    message: "Something goes wrong",
-    success: false,
-    slack_url: "https://hooks.slack.com/services/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",
-    payload: {
-      "Build Date" => Time.new.to_s
-    },
-    attachment_properties: {
-      fields: [
-        {
-          title: "Version number",
-          value: get_version_number,
-        },
-        {
-          title: "Build number",
-          value: get_build_number,
-        },
-        {
-          title: "Last git tag",
-          value: last_git_tag,
-        },
-        {
-          title: "Error message",
-          value: exception.to_s,
-          short: false
-        }
-      ]
-    }
-  )
-end
+  def run_coverage()
+    slather(
+      html: true,
+      configuration: "Debug",
+      scheme: "PickImageAlert",
+      proj: "PickImageAlert.xcodeproj",
+      workspace: "PickImageAlert.xcworkspace",
+      build_directory: "DerivedData",
+      output_directory: "reports/slather/coverage",
+      ignore: get_files_to_ignore()
+    )
+    slather(
+      cobertura_xml: true,
+      configuration: "Debug",
+      scheme: "PickImageAlert",
+      proj: "PickImageAlert.xcodeproj",
+      workspace: "PickImageAlert.xcworkspace",
+      build_directory: "DerivedData",
+      output_directory: "reports/slather", 
+      ignore: get_files_to_ignore()
+    )
+  end
 
-def success_build
-  slack(
-    message: "All tests have been successful",
-    success: true,
-    slack_url: "https://hooks.slack.com/services/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",
-    payload: {
-      "Build Date" => Time.new.to_s
-    },
-    attachment_properties: {
-      fields: [
-        {
-          title: "Version number",
-          value: get_version_number,
-        },
-        {
-          title: "Build number",
-          value: get_build_number,
-        },
-        {
-          title: "Last git tag",
-          value: last_git_tag,
-        }
-      ]
-    }
-  )
+  def get_number_of_tests()
+    path = '../reports/TestSummaries.xml'
+    doc = Nokogiri::XML(File.open(path))
+    tests = doc.xpath("//testsuite")
+    
+    total = tests[0].attr('tests')
+    totalValue = "#{ sprintf '%.0f', total.to_f }"
+    
+    failed = tests[0].attr('failures')
+    failedValue = "#{ sprintf '%.0f', failed.to_f }"
+    
+    result = TestResult.new(total, failed)
+
+    return result
+  end
+
+  def get_failed_tests()
+    path = '../reports/TestSummaries.xml'
+    doc = Nokogiri::XML(File.open(path))
+
+    node_tree = doc.css('testcase')
+    failedTests = node_tree.map do |node|
+      if node.first_element_child
+        "• `#{ node.values[0].split('.')[1].to_s }` - _#{ node.values[1].to_s }_"
+      end
+    end.select {|str| !str.nil? && !str.empty? }
+    
+    return failedTests.join("\n")
+  end
+
+  def get_branch_coverage()
+    if File.file?('../reports/slather/cobertura.xml')
+      coveragePath = '../reports/slather/cobertura.xml'
+      doc = Nokogiri::XML(File.open(coveragePath))
+      coverages = doc.xpath("//coverage[@line-rate]")
+      coverage = coverages[0].attr('line-rate')
+      branchCoverage = "#{ sprintf '%.2f', coverage.to_f * 100 }%"
+      return branchCoverage
+    else
+      return "-"
+    end
+  end
+
+  def get_code_smells()
+    swiftLintPath = '../reports/swiftlint.txt'
+    codeSmells = File.foreach(swiftLintPath).inject(0) {|c, line| c+1}
+    return codeSmells
+  end
+
+  def get_app_version()
+    appVersion = get_version_number()
+    return appVersion
+  end
+
+  def get_files_to_ignore()
+    result = [
+      'PickImageAlertTests/*'
+    ]
+  end
+
+  def on_success()
+
+  end
+
+  def on_error(exception)
+
+  end
 end
