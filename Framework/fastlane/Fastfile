@@ -39,7 +39,7 @@ platform :ios do
       derived_data_path: "DerivedData",
       fail_build: false,
       suppress_xcode_output: false,
-      destination: "platform=iOS Simulator,name=iPhone 8,OS=13.0",
+      device: "iPhone X",
       configuration: "Debug",
       output_types: "junit"
     )
