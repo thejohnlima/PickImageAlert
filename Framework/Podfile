@@ -5,7 +5,7 @@ target 'PickImageAlert' do
   inhibit_all_warnings!
 
   # Pods for PickImageAlert
-  pod 'SwiftLint', '~> 0.28'
+  pod 'SwiftLint'
 
   target 'PickImageAlertTests' do
     inherit! :search_paths
