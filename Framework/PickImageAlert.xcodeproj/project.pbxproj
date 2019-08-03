@@ -291,7 +291,7 @@
 				CLASSPREFIX = PI;
 				LastSwiftUpdateCheck = 1010;
 				LastUpgradeCheck = 1010;
-				ORGANIZATIONNAME = limadeveloper;
+				ORGANIZATIONNAME = thejohnlima;
 				TargetAttributes = {
 					827A8AC32197A5B4002150E2 = {
 						CreatedOnToolsVersion = 10.1;
