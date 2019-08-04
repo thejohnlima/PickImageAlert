@@ -113,11 +113,15 @@ open class PickImageAlert: NSObject {
 
     let cancelAction = UIAlertAction(title: alertProperties.cancelActionTitle, style: .cancel)
 
+    cameraAction.setValue(alertProperties.cameraActionImage, forKey: "image")
+    gallaryAction.setValue(alertProperties.gallaryActionImage, forKey: "image")
+
     alertController?.addAction(cameraAction)
     alertController?.addAction(gallaryAction)
     alertController?.addAction(cancelAction)
 
     alertController?.popoverPresentationController?.sourceView = target.view
+    alertController?.view.tintColor = alertProperties.textColor
 
     alertController?.willChangeOrientation = {
       self.photosView?.collectionViewSizeChanged = true

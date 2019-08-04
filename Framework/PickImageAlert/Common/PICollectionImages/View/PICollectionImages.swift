@@ -50,7 +50,7 @@ class PICollectionImages: UIView {
 
   // MARK: - Private Methods
   private func setupCollectionView() {
-    collectionView.register(PICollectionImageCell.self)
+    collectionView.registerNib(PICollectionImageCell.self)
 
     let flowLayout = UICollectionViewFlowLayout()
     flowLayout.minimumInteritemSpacing = sectionMagin.betweenItems
