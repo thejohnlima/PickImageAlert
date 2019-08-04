@@ -22,7 +22,7 @@
 
 import Foundation
 
-internal class PICollectionImagesViewModel {
+class PICollectionImagesViewModel {
   
   // MARK: - Properties
   var images: [Any] = []

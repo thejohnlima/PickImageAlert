@@ -18,12 +18,23 @@ class ViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
 
-    let properties = PIAlertController.AlertProperties(
+    var cameraImage: UIImage?
+    var gallaryImage: UIImage?
+
+    if #available(iOS 13.0, *) {
+      cameraImage = UIImage(systemName: "camera")
+      gallaryImage = UIImage(systemName: "photo")
+    }
+
+    let properties = PIAlertProperties(
       title: "Pick Image",
       cameraActionTitle: "Camera",
       gallaryActionTitle: "Gallary",
       cancelActionTitle: "Cancel",
-      style: .alert
+      cameraActionImage: cameraImage,
+      gallaryActionImage: gallaryImage,
+      textColor: .purple,
+      style: .actionSheet
     )
 
     pickImageAlert = PickImageAlert(with: self, alertProperties: properties)

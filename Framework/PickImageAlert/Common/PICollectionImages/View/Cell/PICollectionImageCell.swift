@@ -22,7 +22,7 @@
 
 import UIKit
 
-internal class PICollectionImageCell: UICollectionViewCell, ReusableView, NIBLoadableView {
+class PICollectionImageCell: UICollectionViewCell {
   
   // MARK: - Constants
   private let photoCornerRadius: CGFloat = 3
