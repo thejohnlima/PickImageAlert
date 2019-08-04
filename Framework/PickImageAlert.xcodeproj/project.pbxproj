@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1B1DD43922F68AAD002BC054 /* PIAlertProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1DD43822F68AAD002BC054 /* PIAlertProperties.swift */; };
 		3FE3037A78F90C293A9B25EB /* Pods_PickImageAlert.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51939E122C4EEEA5A498D67E /* Pods_PickImageAlert.framework */; };
 		4A80DBB61C0EDF44E51E2107 /* Pods_PickImageAlertTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7908FFE83F743369F2FB9EA /* Pods_PickImageAlertTests.framework */; };
 		823BD78421985F7B003EA826 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 823BD78621985F7B003EA826 /* Localizable.strings */; };
@@ -43,6 +44,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1B1DD43822F68AAD002BC054 /* PIAlertProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PIAlertProperties.swift; sourceTree = "<group>"; };
 		47B78C62AD38BDBBA4586037 /* Pods-PickImageAlertTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PickImageAlertTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PickImageAlertTests/Pods-PickImageAlertTests.debug.xcconfig"; sourceTree = "<group>"; };
 		484C61613EF3F6BBF8780275 /* Pods-PickImageAlert.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PickImageAlert.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PickImageAlert/Pods-PickImageAlert.debug.xcconfig"; sourceTree = "<group>"; };
 		51939E122C4EEEA5A498D67E /* Pods_PickImageAlert.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PickImageAlert.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -140,9 +142,9 @@
 			isa = PBXGroup;
 			children = (
 				827A8AC82197A5B4002150E2 /* Info.plist */,
+				823BD78621985F7B003EA826 /* Localizable.strings */,
 				827A8AC72197A5B4002150E2 /* PickImageAlert.h */,
 				827A8ADE2197A7D2002150E2 /* PickImageAlert.swift */,
-				823BD78621985F7B003EA826 /* Localizable.strings */,
 				827A8AEE2197BC64002150E2 /* Common */,
 			);
 			path = PickImageAlert;
@@ -200,8 +202,9 @@
 			children = (
 				823BD788219860EE003EA826 /* Localizable.swift */,
 				823BD78D2198C473003EA826 /* PIAlertController.swift */,
-				827A8AEF2197BC97002150E2 /* Extensions */,
+				1B1DD43822F68AAD002BC054 /* PIAlertProperties.swift */,
 				827A8AE02197BAAF002150E2 /* PICollectionImages */,
+				827A8AEF2197BC97002150E2 /* Extensions */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -431,6 +434,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				823BD78E2198C473003EA826 /* PIAlertController.swift in Sources */,
+				1B1DD43922F68AAD002BC054 /* PIAlertProperties.swift in Sources */,
 				827A8AF52197C193002150E2 /* NSObject+Extensions.swift in Sources */,
 				827A8B5F2197DE74002150E2 /* PICollectionImageCell.swift in Sources */,
 				823BD7902198C71D003EA826 /* UIDevice+Extensions.swift in Sources */,

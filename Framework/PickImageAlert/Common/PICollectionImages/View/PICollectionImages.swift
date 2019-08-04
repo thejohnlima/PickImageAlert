@@ -22,7 +22,7 @@
 
 import UIKit
 
-internal protocol PICollectionImagesDelegate: AnyObject {
+protocol PICollectionImagesDelegate: AnyObject {
   
   /// This function is responsible to get selected image
   ///
@@ -30,7 +30,7 @@ internal protocol PICollectionImagesDelegate: AnyObject {
   func didSelect(image: UIImage)
 }
 
-internal class PICollectionImages: UIView {
+class PICollectionImages: UIView {
   
   // MARK: - Properties
   @IBOutlet weak var collectionView: UICollectionView!

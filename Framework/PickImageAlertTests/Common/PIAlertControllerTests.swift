@@ -27,13 +27,13 @@ class PIAlertControllerTests: XCTestCase {
 
   // MARK: - Properties
   private var alertController: PIAlertController?
-  private var alertProperties: PIAlertController.AlertProperties?
+  private var alertProperties: PIAlertProperties?
 
   // MARK: - Overrides
   override func setUp() {
     super.setUp()
 
-    alertProperties = PIAlertController.AlertProperties(
+    alertProperties = PIAlertProperties(
       title: "Choose Photo",
       cameraActionTitle: "Camera",
       gallaryActionTitle: "Gallary",

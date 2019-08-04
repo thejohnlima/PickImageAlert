@@ -21,11 +21,11 @@
 //  SOFTWARE.
 
 extension NSObject {
-  internal var identifier: String {
+  var identifier: String {
     return String(describing: type(of: self))
   }
 
-  internal static var identifier: String {
+  static var identifier: String {
     return String(describing: self)
   }
 }

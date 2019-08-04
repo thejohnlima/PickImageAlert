@@ -34,7 +34,7 @@ class PickImageAlertTests: XCTestCase {
 
     let controller = MockViewController()
 
-    let properties = PIAlertController.AlertProperties(
+    let properties = PIAlertProperties(
       title: "Choose Image",
       cameraActionTitle: "Camera",
       gallaryActionTitle: "Gallary",

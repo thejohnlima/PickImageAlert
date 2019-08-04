@@ -23,7 +23,7 @@
 import UIKit
 
 extension UIDevice {
-  internal var isPad: Bool {
+  var isPad: Bool {
     return userInterfaceIdiom == .pad
   }
 }

@@ -92,7 +92,7 @@ open class PickImageAlert: NSObject {
   /// - Parameters:
   ///   - target: Pass here your view controller
   ///   - alertProperties: Pass here some properties for your alert
-  public init(with target: UIViewController, alertProperties: PIAlertController.AlertProperties) {
+  public init(with target: UIViewController, alertProperties: PIAlertProperties) {
     super.init()
 
     targetController = target

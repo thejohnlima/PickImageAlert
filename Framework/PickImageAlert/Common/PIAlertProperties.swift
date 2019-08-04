@@ -20,46 +20,34 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
-import UIKit
+import Foundation
 
-class PIAlertController: UIAlertController {
+/// Properties used to setup the alert
+public struct PIAlertProperties {
 
-  // MARK: - Properties
-  var willAppear: (() -> Void)?
-  var didAppear: (() -> Void)?
-  var didDisappear: (() -> Void)?
-  var willChangeOrientation: (() -> Void)?
-  var willLayoutSubviews: (() -> Void)?
-  var didLayoutSubviews: (() -> Void)?
+  public var title: String?
+  public var style: UIAlertController.Style
+  public var cameraActionTitle: String
+  public var gallaryActionTitle: String
+  public var cancelActionTitle: String
 
-  // MARK: - View LifeCycle
-  override func viewWillAppear(_ animated: Bool) {
-    super.viewWillAppear(animated)
-    willAppear?()
-  }
+  public init(title: String?,
+              cameraActionTitle: String,
+              gallaryActionTitle: String,
+              cancelActionTitle: String,
+              style: UIAlertController.Style = .actionSheet) {
 
-  override func viewDidAppear(_ animated: Bool) {
-    super.viewDidAppear(animated)
-    didAppear?()
-  }
+    var alertStyle: UIAlertController.Style {
+      guard !UIDevice.current.isPad else {
+        return .alert
+      }
+      return style
+    }
 
-  override func viewDidDisappear(_ animated: Bool) {
-    super.viewDidDisappear(animated)
-    didDisappear?()
-  }
-  
-  override func viewWillLayoutSubviews() {
-    super.viewWillLayoutSubviews()
-    willLayoutSubviews?()
-  }
-
-  override func viewDidLayoutSubviews() {
-    super.viewDidLayoutSubviews()
-    didLayoutSubviews?()
-  }
-
-  override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
-    super.viewWillTransition(to: size, with: coordinator)
-    willChangeOrientation?()
+    self.title = title
+    self.style = alertStyle
+    self.cameraActionTitle = cameraActionTitle
+    self.gallaryActionTitle = gallaryActionTitle
+    self.cancelActionTitle = cancelActionTitle
   }
 }

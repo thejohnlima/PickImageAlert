@@ -22,23 +22,24 @@
 
 import UIKit
 
-internal let errorDequeueCellIdenfier = "Could not dequeue cell with identifier"
+// MARK: - Constants
+private let reusableCellError = "Could not load nib with identifier"
 
+// MARK: - Protocols
 extension UICollectionView {
-
-  internal func register<T: UICollectionViewCell>(_: T.Type) where T: ReusableView {
-    register(T.self, forCellWithReuseIdentifier: T.defaultReuseIdentifier)
+  public func register<T: UICollectionViewCell>(_: T.Type) {
+    register(T.self, forCellWithReuseIdentifier: T.identifier)
   }
 
-  internal func register<T: UICollectionViewCell>(_: T.Type) where T: ReusableView, T: NIBLoadableView {
+  public func registerNib<T: UICollectionViewCell>(_: T.Type) {
     let bundle = Bundle(for: T.self)
-    let nib = UINib(nibName: T.nibName, bundle: bundle)
-    register(nib, forCellWithReuseIdentifier: T.defaultReuseIdentifier)
+    let nib = UINib(nibName: T.identifier, bundle: bundle)
+    register(nib, forCellWithReuseIdentifier: T.identifier)
   }
 
-  internal func dequeueReusableCell<T: UICollectionViewCell>(for indexPath: IndexPath) -> T where T: ReusableView {
-    guard let cell = dequeueReusableCell(withReuseIdentifier: T.defaultReuseIdentifier, for: indexPath) as? T else {
-      fatalError("⚠️  \(errorDequeueCellIdenfier): \(T.defaultReuseIdentifier)")
+  public func dequeueReusableCell<T: UICollectionViewCell>(for indexPath: IndexPath) -> T {
+    guard let cell = dequeueReusableCell(withReuseIdentifier: T.identifier, for: indexPath) as? T else {
+      fatalError("\(reusableCellError): \(T.identifier)")
     }
     return cell
   }
