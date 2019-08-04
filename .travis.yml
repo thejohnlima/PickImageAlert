@@ -1,14 +1,14 @@
 language: swift
 osx_image: xcode11
 before_install:
-- set -o pipefail
-- xcrun simctl boot "iPhone X" || echo "(Pre)Launched the simulator."
+  - set -o pipefail
+  - xcrun simctl boot "iPhone SE" || echo "(Pre)Launched the simulator."
 script:
-- cd Framework
-- bundle install
-- bundle exec fastlane build
-- cd ..
-- pod lib lint --allow-warnings
-- pod spec lint --allow-warnings
+  - cd Framework
+  - bundle install
+  - bundle exec fastlane build
+  - cd ..
+  - pod lib lint --allow-warnings
+  - pod spec lint --allow-warnings
 after_success:
-  - bash <(curl -s https://codecov.io/bash) -t e0abdf28-bcb2-4005-bf49-6fe3642b34fc -J PickImageAlert
+  - bash <(curl -s https://codecov.io/bash)

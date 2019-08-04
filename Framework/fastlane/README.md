@@ -26,11 +26,6 @@ fastlane ios tests
 fastlane ios build
 ```
 
-### ios full_build
-```
-fastlane ios full_build
-```
-
 
 ----
 

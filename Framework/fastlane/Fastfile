@@ -36,10 +36,9 @@ platform :ios do
       scheme: "PickImageAlert",
       code_coverage: true,
       output_directory: "reports",
-      derived_data_path: "DerivedData",
       fail_build: false,
       suppress_xcode_output: false,
-      device: "iPhone X",
+      device: "iPhone SE",
       configuration: "Debug",
       output_types: "junit"
     )
@@ -48,13 +47,6 @@ platform :ios do
   lane :build do
     tests
     run_lint()
-    prepare_reports()
-  end
-
-  lane :full_build do
-    tests
-    run_lint()
-    run_coverage()
     prepare_reports()
   end
 
@@ -80,29 +72,6 @@ platform :ios do
       output_file: "reports/swiftlint.txt", 
       ignore_exit_status: true,
       executable: "./Pods/SwiftLint/swiftlint"
-    )
-  end
-
-  def run_coverage()
-    slather(
-      html: true,
-      configuration: "Debug",
-      scheme: "PickImageAlert",
-      proj: "PickImageAlert.xcodeproj",
-      workspace: "PickImageAlert.xcworkspace",
-      build_directory: "DerivedData",
-      output_directory: "reports/slather/coverage",
-      ignore: get_files_to_ignore()
-    )
-    slather(
-      cobertura_xml: true,
-      configuration: "Debug",
-      scheme: "PickImageAlert",
-      proj: "PickImageAlert.xcodeproj",
-      workspace: "PickImageAlert.xcworkspace",
-      build_directory: "DerivedData",
-      output_directory: "reports/slather", 
-      ignore: get_files_to_ignore()
     )
   end
 
@@ -134,19 +103,6 @@ platform :ios do
     end.select {|str| !str.nil? && !str.empty? }
     
     return failedTests.join("\n")
-  end
-
-  def get_branch_coverage()
-    if File.file?('../reports/slather/cobertura.xml')
-      coveragePath = '../reports/slather/cobertura.xml'
-      doc = Nokogiri::XML(File.open(coveragePath))
-      coverages = doc.xpath("//coverage[@line-rate]")
-      coverage = coverages[0].attr('line-rate')
-      branchCoverage = "#{ sprintf '%.2f', coverage.to_f * 100 }%"
-      return branchCoverage
-    else
-      return "-"
-    end
   end
 
   def get_code_smells()
