@@ -26,15 +26,30 @@ import Foundation
 public struct PIAlertProperties {
 
   public var title: String?
+  public var textColor: UIColor?
   public var style: UIAlertController.Style
   public var cameraActionTitle: String
+  public var cameraActionImage: UIImage?
   public var gallaryActionTitle: String
+  public var gallaryActionImage: UIImage?
   public var cancelActionTitle: String
 
+  /// Initialize properties to setup the alert
+  /// - Parameter title: The text that will appear on top of the alert
+  /// - Parameter cameraActionTitle: Title for camera action
+  /// - Parameter gallaryActionTitle: Title for gallary action
+  /// - Parameter cancelActionTitle: Title for cancel action
+  /// - Parameter cameraActionImage: Image for camera action
+  /// - Parameter gallaryActionImage: Image for gallary action
+  /// - Parameter textColor: The text color for actions title
+  /// - Parameter style: Alert style (**.alert** or **.actionSheet**)
   public init(title: String?,
               cameraActionTitle: String,
               gallaryActionTitle: String,
               cancelActionTitle: String,
+              cameraActionImage: UIImage? = nil,
+              gallaryActionImage: UIImage? = nil,
+              textColor: UIColor? = nil,
               style: UIAlertController.Style = .actionSheet) {
 
     var alertStyle: UIAlertController.Style {
@@ -45,9 +60,12 @@ public struct PIAlertProperties {
     }
 
     self.title = title
+    self.textColor = textColor
     self.style = alertStyle
     self.cameraActionTitle = cameraActionTitle
     self.gallaryActionTitle = gallaryActionTitle
     self.cancelActionTitle = cancelActionTitle
+    self.cameraActionImage = cameraActionImage
+    self.gallaryActionImage = gallaryActionImage
   }
 }

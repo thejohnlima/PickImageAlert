@@ -37,7 +37,7 @@ import UIKit
 /// ```
 /// override func viewDidLoad() {
 ///   super.viewDidLoad()
-///   let properties = PIAlertController.AlertProperties(
+///   let properties = PIAlertProperties(
 ///     title: "Choose Image",
 ///     cameraActionTitle: "Camera",
 ///     gallaryActionTitle: "Gallary",
@@ -65,13 +65,13 @@ open class PickImageAlert: NSObject {
   private let alertViewHeight: CGFloat = 360
 
   // MARK: - Properties
-  internal weak var targetController: UIViewController?
-  internal var pickerController = UIImagePickerController()
-  internal var pickImageSuccess: SuccessBlock<UIImage>?
-  internal var alertController: PIAlertController?
-  internal var fetchedImages: [UIImage] = []
+  weak var targetController: UIViewController?
+  var pickerController = UIImagePickerController()
+  var pickImageSuccess: SuccessBlock<UIImage>?
+  var alertController: PIAlertController?
+  var fetchedImages: [UIImage] = []
 
-  internal lazy var photosView: PICollectionImages? = {
+  lazy var photosView: PICollectionImages? = {
     let view: PICollectionImages = UIView.fromNib()
     view.translatesAutoresizingMaskIntoConstraints = false
     view.backgroundColor = .clear
