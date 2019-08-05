@@ -32,7 +32,7 @@ pod 'PickImageAlert'
 
 and run `pod install`
 
-## 🎓How to use
+## 🎓 How to use
 
 Import library in your swift file:
 
