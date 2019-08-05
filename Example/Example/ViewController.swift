@@ -34,7 +34,7 @@ class ViewController: UIViewController {
       cameraActionImage: cameraImage,
       gallaryActionImage: gallaryImage,
       textColor: .purple,
-      style: .actionSheet
+      style: .alert
     )
 
     pickImageAlert = PickImageAlert(with: self, alertProperties: properties)
