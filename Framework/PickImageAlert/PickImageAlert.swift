@@ -65,11 +65,12 @@ open class PickImageAlert: NSObject {
   private let alertViewHeight: CGFloat = 360
 
   // MARK: - Properties
-  weak var targetController: UIViewController?
   var pickerController = UIImagePickerController()
   var pickImageSuccess: SuccessBlock<UIImage>?
   var alertController: PIAlertController?
   var fetchedImages: [UIImage] = []
+
+  weak var targetController: UIViewController?
 
   lazy var photosView: PICollectionImages? = {
     let view: PICollectionImages = UIView.fromNib()
@@ -79,8 +80,8 @@ open class PickImageAlert: NSObject {
   }()
 
   /// The limit of images that will appear in the collection.
-  /// The default value is 120
-  public var limitImages: Int = 120
+  /// The default value is 30
+  public var limitImages: Int = 30
 
   /// The limit size of the returned image
   /// The default value is 320x320
@@ -256,13 +257,9 @@ open class PickImageAlert: NSObject {
 
   private func fetchPhotos(success: @escaping SuccessBlock<[UIImage]>, empty: EmptyBlock? = nil) {
     PHPhotoLibrary.requestAuthorization { [weak self] status in
-      guard let `self` = self else {
-        empty?()
-        return
-      }
       switch status {
       case .authorized:
-        self.fetchPhotosAfterAuthorizedStatus(success: success)
+        self?.fetchPhotosAfterAuthorizedStatus(success: success)
       default:
         empty?()
       }
@@ -280,7 +277,7 @@ open class PickImageAlert: NSObject {
 
     photoAssets.enumerateObjects { asset, _, _ in
       let options = PHImageRequestOptions()
-      options.deliveryMode = .fastFormat
+      options.deliveryMode = .opportunistic
       options.isSynchronous = true
 
       var photoSize = CGSize(width: asset.pixelWidth, height: asset.pixelHeight)
@@ -289,18 +286,13 @@ open class PickImageAlert: NSObject {
         photoSize = self.imageSize
       }
 
-      // swiftlint:disable closure_end_indentation
-      // swiftlint:disable trailing_closure
-      PHCachingImageManager().requestImage(
-        for: asset,
-        targetSize: photoSize,
-        contentMode: .aspectFit,
-        options: options,
-        resultHandler: { photo, _ in
-          if let photo = photo {
-            result.append(photo)
-          }
-      })
+      let manager = PHCachingImageManager()
+
+      manager.requestImage(for: asset, targetSize: photoSize, contentMode: .aspectFit, options: options) { photo, _ in
+        if let photo = photo {
+          result.append(photo)
+        }
+      }
     }
 
     success(result)

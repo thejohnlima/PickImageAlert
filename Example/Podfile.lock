@@ -17,7 +17,7 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   PickImageAlert:
-    :commit: 0fae143a092e4cfbdb9ab4de8689ae04fde44e7d
+    :commit: 6d0769a76520af22c80f17adc593672ed8748b71
     :git: https://github.com/limadeveloper/PickImageAlert.git
 
 SPEC CHECKSUMS:

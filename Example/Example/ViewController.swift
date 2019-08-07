@@ -17,7 +17,18 @@ class ViewController: UIViewController {
   // MARK: - View LifeCycle
   override func viewDidLoad() {
     super.viewDidLoad()
+    setupUI()
+  }
 
+  // MARK: - Actions
+  @IBAction private func pickImage(sender: Any?) {
+    pickImageAlert?.pickImage { image in
+      print("📷 selected photo: \(String(describing: image))")
+    }
+  }
+
+  // MARK: - Private Methods
+  private func setupUI() {
     var cameraImage: UIImage?
     var gallaryImage: UIImage?
 
@@ -38,12 +49,5 @@ class ViewController: UIViewController {
     )
 
     pickImageAlert = PickImageAlert(with: self, alertProperties: properties)
-  }
-
-  // MARK: - Actions
-  @IBAction private func pickImage(sender: Any?) {
-    pickImageAlert?.pickImage { image in
-      print("📷 selected photo: \(String(describing: image))")
-    }
   }
 }
