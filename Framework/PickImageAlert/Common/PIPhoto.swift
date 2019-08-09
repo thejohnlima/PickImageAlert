@@ -20,30 +20,10 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
-import UIKit
+import Photos
 
-class PICollectionImageCell: UICollectionViewCell {
-  
-  // MARK: - Constants
-  private let photoCornerRadius: CGFloat = 3
-  
-  // MARK: - Properties
-  @IBOutlet weak var photoImageView: UIImageView!
-  
-  var photo: PIPhoto? {
-    didSet {
-      guard let photo = photo else { return }
-      PickImageAlert.requestImage(photo.asset, size: photo.small) { image in
-        DispatchQueue.main.async {
-          self.photoImageView.image = image
-        }
-      }
-    }
-  }
-  
-  // MARK: - Overrides
-  override func awakeFromNib() {
-    super.awakeFromNib()
-    photoImageView.rounded(withCornerRadius: photoCornerRadius)
-  }
+struct PIPhoto {
+  let large: CGSize
+  let small: CGSize
+  let asset: PHAsset
 }
