@@ -27,17 +27,17 @@ private let reusableCellError = "Could not load nib with identifier"
 
 // MARK: - Protocols
 extension UICollectionView {
-  public func register<T: UICollectionViewCell>(_: T.Type) {
+  func register<T: UICollectionViewCell>(_: T.Type) {
     register(T.self, forCellWithReuseIdentifier: T.identifier)
   }
 
-  public func registerNib<T: UICollectionViewCell>(_: T.Type) {
+  func registerNib<T: UICollectionViewCell>(_: T.Type) {
     let bundle = Bundle(for: T.self)
     let nib = UINib(nibName: T.identifier, bundle: bundle)
     register(nib, forCellWithReuseIdentifier: T.identifier)
   }
 
-  public func dequeueReusableCell<T: UICollectionViewCell>(for indexPath: IndexPath) -> T {
+  func dequeueReusableCell<T: UICollectionViewCell>(for indexPath: IndexPath) -> T {
     guard let cell = dequeueReusableCell(withReuseIdentifier: T.identifier, for: indexPath) as? T else {
       fatalError("\(reusableCellError): \(T.identifier)")
     }
