@@ -74,6 +74,6 @@ class PICollectionImagesTests: XCTestCase {
     XCTAssertNotNil(cell)
     XCTAssertNotNil(cell?.photo)
     XCTAssertNotNil(cell?.photoImageView)
-    XCTAssertEqual(cell?.photoImageView.layer.cornerRadius, 3)
+    XCTAssertEqual(cell?.photoImageView?.layer.cornerRadius, 3)
   }
 }
