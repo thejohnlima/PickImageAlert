@@ -55,7 +55,7 @@ class PickImageAlertTests: XCTestCase {
     XCTAssertNotNil(pickImageAlert?.alertController)
     XCTAssertNotNil(pickImageAlert?.pickerController.delegate)
     XCTAssertTrue(pickImageAlert?.pickerController.delegate is PickImageAlert)
-    XCTAssertEqual(pickImageAlert?.limitImages, 120)
+    XCTAssertEqual(pickImageAlert?.limitImages, 30)
     XCTAssertEqual(pickImageAlert?.imageSize, CGSize(width: 320, height: 320))
   }
 

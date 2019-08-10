@@ -25,5 +25,5 @@ import Foundation
 class PICollectionImagesViewModel {
   
   // MARK: - Properties
-  var images: [Any] = []
+  var photos: [PIPhoto] = []
 }

@@ -24,10 +24,13 @@ import UIKit
 
 protocol PICollectionImagesDelegate: AnyObject {
   
-  /// This function is responsible to get selected image
+  /// Did fetch the selected image
   ///
   /// - Parameter image: Selected image
-  func didSelect(image: UIImage)
+  func didFetch(_ image: UIImage)
+
+  /// Start fetch the selected image
+  func startfetchImage()
 }
 
 class PICollectionImages: UIView {
@@ -65,12 +68,12 @@ class PICollectionImages: UIView {
 // MARK: - UICollectionViewDataSource
 extension PICollectionImages: UICollectionViewDataSource {
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    return viewModel.images.count
+    return viewModel.photos.count
   }
   
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     let cell: PICollectionImageCell = collectionView.dequeueReusableCell(for: indexPath)
-    cell.image = viewModel.images[indexPath.item] as? UIImage
+    cell.photo = viewModel.photos[indexPath.item]
     return cell
   }
 }
@@ -89,7 +92,11 @@ extension PICollectionImages: UICollectionViewDelegateFlowLayout {
 // MARK: - UICollectionViewDelegate
 extension PICollectionImages: UICollectionViewDelegate {
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-    guard let image = viewModel.images[indexPath.item] as? UIImage else { return }
-    delegate?.didSelect(image: image)
+    let photo = viewModel.photos[indexPath.item]
+    delegate?.startfetchImage()
+    PickImageAlert.requestImage(photo.asset, size: photo.large) { image in
+      guard let image = image else { return }
+      self.delegate?.didFetch(image)
+    }
   }
 }
