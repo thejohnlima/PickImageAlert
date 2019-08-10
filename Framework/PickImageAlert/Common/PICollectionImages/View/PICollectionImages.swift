@@ -24,10 +24,13 @@ import UIKit
 
 protocol PICollectionImagesDelegate: AnyObject {
   
-  /// This function is responsible to get selected image
+  /// Did fetch the selected image
   ///
   /// - Parameter image: Selected image
-  func didSelect(image: UIImage)
+  func didFetch(_ image: UIImage)
+
+  /// Start fetch the selected image
+  func startfetchImage()
 }
 
 class PICollectionImages: UIView {
@@ -90,9 +93,10 @@ extension PICollectionImages: UICollectionViewDelegateFlowLayout {
 extension PICollectionImages: UICollectionViewDelegate {
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
     let photo = viewModel.photos[indexPath.item]
+    delegate?.startfetchImage()
     PickImageAlert.requestImage(photo.asset, size: photo.large) { image in
       guard let image = image else { return }
-      self.delegate?.didSelect(image: image)
+      self.delegate?.didFetch(image)
     }
   }
 }

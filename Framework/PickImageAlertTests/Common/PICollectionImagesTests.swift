@@ -20,6 +20,7 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
+import Photos
 @testable import PickImageAlert
 import XCTest
 
@@ -32,7 +33,14 @@ class PICollectionImagesTests: XCTestCase {
   override func setUp() {
     super.setUp()
     collectionImages = UIView.fromNib()
-    collectionImages?.viewModel.images = [UIImage()]
+
+    collectionImages?.viewModel.photos = [
+      PIPhoto(
+        large: CGSize(width: 320, height: 520),
+        small: CGSize(width: 320, height: 320),
+        asset: PHAsset()
+      )
+    ]
   }
 
   override func tearDown() {
@@ -44,7 +52,7 @@ class PICollectionImagesTests: XCTestCase {
   func testInitWithSuccess() {
     XCTAssertNotNil(collectionImages)
     XCTAssertNotNil(collectionImages?.collectionView)
-    XCTAssertEqual(collectionImages?.viewModel.images.count, 1)
+    XCTAssertEqual(collectionImages?.viewModel.photos.count, 1)
   }
 
   func testNumberOfItemsInCollectionView() {
@@ -64,7 +72,7 @@ class PICollectionImagesTests: XCTestCase {
     let indexaPath = IndexPath(item: 0, section: 0)
     let cell = collectionImages?.collectionView(collectionView, cellForItemAt: indexaPath) as? PICollectionImageCell
     XCTAssertNotNil(cell)
-    XCTAssertNotNil(cell?.image)
+    XCTAssertNotNil(cell?.photo)
     XCTAssertNotNil(cell?.photoImageView)
     XCTAssertEqual(cell?.photoImageView.layer.cornerRadius, 3)
   }

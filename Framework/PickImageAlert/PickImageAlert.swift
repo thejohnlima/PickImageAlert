@@ -67,6 +67,7 @@ open class PickImageAlert: NSObject {
   // MARK: - Properties
   var pickerController = UIImagePickerController()
   var pickImageSuccess: SuccessBlock<UIImage>?
+  var didStartFetchImage: EmptyBlock?
   var alertController: PIAlertController?
   var photos: [PIPhoto] = []
 
@@ -146,8 +147,10 @@ open class PickImageAlert: NSObject {
   /// Call this method to present the alert with images
   ///
   /// - Parameter success: Selected image
-  public func pickImage(success: @escaping SuccessBlock<UIImage>) {
+  /// - Parameter loading: Loading the selected simage
+  public func pickImage(success: @escaping SuccessBlock<UIImage>, loading: EmptyBlock? = nil) {
     pickImageSuccess = success
+    didStartFetchImage = loading
 
     fetchPhotos(success: { [weak self] photos in
       if let photos = photos, !photos.isEmpty {
@@ -319,7 +322,11 @@ extension PickImageAlert: UIImagePickerControllerDelegate, UINavigationControlle
 
 // MARK: - PICollectionImagesDelegate
 extension PickImageAlert: PICollectionImagesDelegate {
-  func didSelect(image: UIImage) {
+  func startfetchImage() {
+    didStartFetchImage?()
+  }
+
+  func didFetch(_ image: UIImage) {
     alertController?.dismiss(animated: true) { [weak self] in
       self?.pickImageSuccess?(image)
     }
