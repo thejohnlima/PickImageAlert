@@ -38,7 +38,7 @@ platform :ios do
       output_directory: "reports",
       fail_build: false,
       suppress_xcode_output: false,
-      device: "iPhone SE",
+      device: "iPhone 8",
       configuration: "Debug",
       output_types: "junit"
     )
@@ -70,8 +70,7 @@ platform :ios do
   def run_lint()
     swiftlint(
       output_file: "reports/swiftlint.txt", 
-      ignore_exit_status: true,
-      executable: "./Pods/SwiftLint/swiftlint"
+      ignore_exit_status: true
     )
   end
 
@@ -114,12 +113,6 @@ platform :ios do
   def get_app_version()
     appVersion = get_version_number()
     return appVersion
-  end
-
-  def get_files_to_ignore()
-    result = [
-      'PickImageAlertTests/*'
-    ]
   end
 
   def on_success()

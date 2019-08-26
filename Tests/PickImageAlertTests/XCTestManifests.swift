@@ -20,12 +20,12 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
-extension NSObject {
-  var identifier: String {
-    return String(describing: type(of: self))
-  }
+import XCTest
 
-  static var identifier: String {
-    return String(describing: self)
-  }
+#if !canImport(ObjectiveC)
+public func allTests() -> [XCTestCaseEntry] {
+  return [
+    testCase(PickImageAlertTests.allTests),
+  ]
 }
+#endif

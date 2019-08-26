@@ -7,25 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1B1DD43922F68AAD002BC054 /* PIAlertProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B1DD43822F68AAD002BC054 /* PIAlertProperties.swift */; };
-		1BB67E5322FD0BA4009893FE /* PIPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BB67E5222FD0BA4009893FE /* PIPhoto.swift */; };
+		1BB972F52314091D00FE2784 /* Common in Resources */ = {isa = PBXBuildFile; fileRef = 1BB972F32314091D00FE2784 /* Common */; };
+		1BB972F62314091D00FE2784 /* PickImageAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BB972F42314091D00FE2784 /* PickImageAlert.swift */; };
 		3FE3037A78F90C293A9B25EB /* Pods_PickImageAlert.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51939E122C4EEEA5A498D67E /* Pods_PickImageAlert.framework */; };
 		4A80DBB61C0EDF44E51E2107 /* Pods_PickImageAlertTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7908FFE83F743369F2FB9EA /* Pods_PickImageAlertTests.framework */; };
 		823BD78421985F7B003EA826 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 823BD78621985F7B003EA826 /* Localizable.strings */; };
-		823BD789219860EE003EA826 /* Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823BD788219860EE003EA826 /* Localizable.swift */; };
-		823BD78E2198C473003EA826 /* PIAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823BD78D2198C473003EA826 /* PIAlertController.swift */; };
-		823BD7902198C71D003EA826 /* UIDevice+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823BD78F2198C71D003EA826 /* UIDevice+Extensions.swift */; };
 		827A8ACE2197A5B4002150E2 /* PickImageAlert.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 827A8AC42197A5B4002150E2 /* PickImageAlert.framework */; };
 		827A8AD52197A5B4002150E2 /* PickImageAlert.h in Headers */ = {isa = PBXBuildFile; fileRef = 827A8AC72197A5B4002150E2 /* PickImageAlert.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		827A8ADF2197A7D2002150E2 /* PickImageAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827A8ADE2197A7D2002150E2 /* PickImageAlert.swift */; };
-		827A8AE92197BAAF002150E2 /* PICollectionImagesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827A8AE22197BAAF002150E2 /* PICollectionImagesViewModel.swift */; };
-		827A8AF12197BCC7002150E2 /* UICollectionView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827A8AF02197BCC7002150E2 /* UICollectionView+Extensions.swift */; };
-		827A8AF32197BCF9002150E2 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827A8AF22197BCF9002150E2 /* UIView+Extensions.swift */; };
-		827A8AF52197C193002150E2 /* NSObject+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827A8AF42197C193002150E2 /* NSObject+Extensions.swift */; };
-		827A8B5B2197DE5F002150E2 /* PICollectionImages.xib in Resources */ = {isa = PBXBuildFile; fileRef = 827A8B592197DE5F002150E2 /* PICollectionImages.xib */; };
-		827A8B5C2197DE5F002150E2 /* PICollectionImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827A8B5A2197DE5F002150E2 /* PICollectionImages.swift */; };
-		827A8B5F2197DE74002150E2 /* PICollectionImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 827A8B5D2197DE74002150E2 /* PICollectionImageCell.swift */; };
-		827A8B602197DE74002150E2 /* PICollectionImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 827A8B5E2197DE74002150E2 /* PICollectionImageCell.xib */; };
 		828C264D21990B7B0055EDD6 /* PIAlertControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828C264C21990B7B0055EDD6 /* PIAlertControllerTests.swift */; };
 		828C264F219913BE0055EDD6 /* LocalizableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828C264E219913BE0055EDD6 /* LocalizableTests.swift */; };
 		828C26512199156D0055EDD6 /* PICollectionImagesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828C26502199156D0055EDD6 /* PICollectionImagesTests.swift */; };
@@ -45,29 +33,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1B1DD43822F68AAD002BC054 /* PIAlertProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PIAlertProperties.swift; sourceTree = "<group>"; };
-		1BB67E5222FD0BA4009893FE /* PIPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PIPhoto.swift; sourceTree = "<group>"; };
+		1BB972F32314091D00FE2784 /* Common */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Common; path = ../../Sources/PickImageAlert/Common; sourceTree = "<group>"; };
+		1BB972F42314091D00FE2784 /* PickImageAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PickImageAlert.swift; path = ../../Sources/PickImageAlert/PickImageAlert.swift; sourceTree = "<group>"; };
 		47B78C62AD38BDBBA4586037 /* Pods-PickImageAlertTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PickImageAlertTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PickImageAlertTests/Pods-PickImageAlertTests.debug.xcconfig"; sourceTree = "<group>"; };
 		484C61613EF3F6BBF8780275 /* Pods-PickImageAlert.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PickImageAlert.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PickImageAlert/Pods-PickImageAlert.debug.xcconfig"; sourceTree = "<group>"; };
 		51939E122C4EEEA5A498D67E /* Pods_PickImageAlert.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PickImageAlert.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		823BD78521985F7B003EA826 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		823BD788219860EE003EA826 /* Localizable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localizable.swift; sourceTree = "<group>"; };
-		823BD78D2198C473003EA826 /* PIAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PIAlertController.swift; sourceTree = "<group>"; };
-		823BD78F2198C71D003EA826 /* UIDevice+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+Extensions.swift"; sourceTree = "<group>"; };
 		827A8AC42197A5B4002150E2 /* PickImageAlert.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PickImageAlert.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		827A8AC72197A5B4002150E2 /* PickImageAlert.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PickImageAlert.h; sourceTree = "<group>"; };
 		827A8AC82197A5B4002150E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		827A8ACD2197A5B4002150E2 /* PickImageAlertTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PickImageAlertTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		827A8AD42197A5B4002150E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		827A8ADE2197A7D2002150E2 /* PickImageAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickImageAlert.swift; sourceTree = "<group>"; };
-		827A8AE22197BAAF002150E2 /* PICollectionImagesViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PICollectionImagesViewModel.swift; sourceTree = "<group>"; };
-		827A8AF02197BCC7002150E2 /* UICollectionView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extensions.swift"; sourceTree = "<group>"; };
-		827A8AF22197BCF9002150E2 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
-		827A8AF42197C193002150E2 /* NSObject+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+Extensions.swift"; sourceTree = "<group>"; };
-		827A8B592197DE5F002150E2 /* PICollectionImages.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PICollectionImages.xib; sourceTree = "<group>"; };
-		827A8B5A2197DE5F002150E2 /* PICollectionImages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PICollectionImages.swift; sourceTree = "<group>"; };
-		827A8B5D2197DE74002150E2 /* PICollectionImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PICollectionImageCell.swift; sourceTree = "<group>"; };
-		827A8B5E2197DE74002150E2 /* PICollectionImageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PICollectionImageCell.xib; sourceTree = "<group>"; };
 		828C264C21990B7B0055EDD6 /* PIAlertControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PIAlertControllerTests.swift; sourceTree = "<group>"; };
 		828C264E219913BE0055EDD6 /* LocalizableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizableTests.swift; sourceTree = "<group>"; };
 		828C26502199156D0055EDD6 /* PICollectionImagesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PICollectionImagesTests.swift; sourceTree = "<group>"; };
@@ -146,8 +122,8 @@
 				827A8AC82197A5B4002150E2 /* Info.plist */,
 				823BD78621985F7B003EA826 /* Localizable.strings */,
 				827A8AC72197A5B4002150E2 /* PickImageAlert.h */,
-				827A8ADE2197A7D2002150E2 /* PickImageAlert.swift */,
-				827A8AEE2197BC64002150E2 /* Common */,
+				1BB972F42314091D00FE2784 /* PickImageAlert.swift */,
+				1BB972F32314091D00FE2784 /* Common */,
 			);
 			path = PickImageAlert;
 			sourceTree = "<group>";
@@ -161,66 +137,6 @@
 				828C264B21990B2A0055EDD6 /* Common */,
 			);
 			path = PickImageAlertTests;
-			sourceTree = "<group>";
-		};
-		827A8AE02197BAAF002150E2 /* PICollectionImages */ = {
-			isa = PBXGroup;
-			children = (
-				827A8AE12197BAAF002150E2 /* ViewModel */,
-				827A8AE32197BAAF002150E2 /* View */,
-			);
-			path = PICollectionImages;
-			sourceTree = "<group>";
-		};
-		827A8AE12197BAAF002150E2 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				827A8AE22197BAAF002150E2 /* PICollectionImagesViewModel.swift */,
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		827A8AE32197BAAF002150E2 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				827A8B5A2197DE5F002150E2 /* PICollectionImages.swift */,
-				827A8B592197DE5F002150E2 /* PICollectionImages.xib */,
-				827A8AE62197BAAF002150E2 /* Cell */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		827A8AE62197BAAF002150E2 /* Cell */ = {
-			isa = PBXGroup;
-			children = (
-				827A8B5D2197DE74002150E2 /* PICollectionImageCell.swift */,
-				827A8B5E2197DE74002150E2 /* PICollectionImageCell.xib */,
-			);
-			path = Cell;
-			sourceTree = "<group>";
-		};
-		827A8AEE2197BC64002150E2 /* Common */ = {
-			isa = PBXGroup;
-			children = (
-				823BD788219860EE003EA826 /* Localizable.swift */,
-				823BD78D2198C473003EA826 /* PIAlertController.swift */,
-				1B1DD43822F68AAD002BC054 /* PIAlertProperties.swift */,
-				1BB67E5222FD0BA4009893FE /* PIPhoto.swift */,
-				827A8AE02197BAAF002150E2 /* PICollectionImages */,
-				827A8AEF2197BC97002150E2 /* Extensions */,
-			);
-			path = Common;
-			sourceTree = "<group>";
-		};
-		827A8AEF2197BC97002150E2 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				827A8AF42197C193002150E2 /* NSObject+Extensions.swift */,
-				827A8AF02197BCC7002150E2 /* UICollectionView+Extensions.swift */,
-				823BD78F2198C71D003EA826 /* UIDevice+Extensions.swift */,
-				827A8AF22197BCF9002150E2 /* UIView+Extensions.swift */,
-			);
-			path = Extensions;
 			sourceTree = "<group>";
 		};
 		828C264B21990B2A0055EDD6 /* Common */ = {
@@ -333,9 +249,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				827A8B602197DE74002150E2 /* PICollectionImageCell.xib in Resources */,
 				823BD78421985F7B003EA826 /* Localizable.strings in Resources */,
-				827A8B5B2197DE5F002150E2 /* PICollectionImages.xib in Resources */,
+				1BB972F52314091D00FE2784 /* Common in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -436,18 +351,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				823BD78E2198C473003EA826 /* PIAlertController.swift in Sources */,
-				1B1DD43922F68AAD002BC054 /* PIAlertProperties.swift in Sources */,
-				827A8AF52197C193002150E2 /* NSObject+Extensions.swift in Sources */,
-				1BB67E5322FD0BA4009893FE /* PIPhoto.swift in Sources */,
-				827A8B5F2197DE74002150E2 /* PICollectionImageCell.swift in Sources */,
-				823BD7902198C71D003EA826 /* UIDevice+Extensions.swift in Sources */,
-				827A8ADF2197A7D2002150E2 /* PickImageAlert.swift in Sources */,
-				827A8AE92197BAAF002150E2 /* PICollectionImagesViewModel.swift in Sources */,
-				827A8AF32197BCF9002150E2 /* UIView+Extensions.swift in Sources */,
-				827A8B5C2197DE5F002150E2 /* PICollectionImages.swift in Sources */,
-				823BD789219860EE003EA826 /* Localizable.swift in Sources */,
-				827A8AF12197BCC7002150E2 /* UICollectionView+Extensions.swift in Sources */,
+				1BB972F62314091D00FE2784 /* PickImageAlert.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -628,8 +532,8 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.4;
-				PRODUCT_BUNDLE_IDENTIFIER = ios.pickimagealert;
+				MARKETING_VERSION = 1.0.5;
+				PRODUCT_BUNDLE_IDENTIFIER = thejohnlima.PickImageAlert;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				RUN_CLANG_STATIC_ANALYZER = YES;
 				SKIP_INSTALL = YES;
@@ -658,8 +562,8 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.4;
-				PRODUCT_BUNDLE_IDENTIFIER = ios.pickimagealert;
+				MARKETING_VERSION = 1.0.5;
+				PRODUCT_BUNDLE_IDENTIFIER = thejohnlima.PickImageAlert;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				RUN_CLANG_STATIC_ANALYZER = YES;
 				SKIP_INSTALL = YES;
