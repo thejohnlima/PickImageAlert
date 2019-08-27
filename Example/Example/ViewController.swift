@@ -22,9 +22,12 @@ class ViewController: UIViewController {
 
   // MARK: - Actions
   @IBAction private func pickImage(sender: Any?) {
-    pickImageAlert?.pickImage { image in
+    pickImageAlert?.pickImage(success: { image in
       print("📷 selected photo: \(String(describing: image))")
-    }
+      UIApplication.shared.isNetworkActivityIndicatorVisible = false
+    }, loading: {
+      UIApplication.shared.isNetworkActivityIndicatorVisible = true
+    })
   }
 
   // MARK: - Private Methods
