@@ -25,7 +25,12 @@ import XCTest
 
 class ExtensionTests: XCTestCase {
 
-  // MARK: - Tests
+  // MARK: - Properties
+  static var allTests = [
+    ("testCreateIdentifierWithSuccess", testCreateIdentifierWithSuccess)
+  ]
+
+  // MARK: - Test Methods
   func testCreateIdentifierWithSuccess() {
     let objectIdentifier = PIAlertController.identifier
     let selfIdentifier = self.identifier

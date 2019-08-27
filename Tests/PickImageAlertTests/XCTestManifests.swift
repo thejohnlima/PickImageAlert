@@ -26,6 +26,8 @@ import XCTest
 public func allTests() -> [XCTestCaseEntry] {
   return [
     testCase(PickImageAlertTests.allTests),
+    testCase(ExtensionTests.allTests),
+    testCase(PIAlertControllerTests.allTests)
   ]
 }
 #endif

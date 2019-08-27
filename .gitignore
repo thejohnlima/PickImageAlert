@@ -64,4 +64,5 @@ Carthage/Build
 # https://docs.fastlane.tools/best-practices/source-control/#source-control
 
 reports
-Framework/fastlane/report.xml
+fastlane/report.xml
+fastlane/README.md

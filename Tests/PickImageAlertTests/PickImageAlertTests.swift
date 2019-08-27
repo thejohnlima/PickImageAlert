@@ -20,15 +20,54 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
-import XCTest
 @testable import PickImageAlert
+import XCTest
 
-final class PickImageAlertTests: XCTestCase {
+class PickImageAlertTests: XCTestCase {
+
+  // MARK: - Properties
+  private var pickImageAlert: PickImageAlert?
+
   static var allTests = [
-    ("testExample", testExample),
+    ("testInitWithSuccess", testInitWithSuccess),
+    ("testSetupAlertControllerWithSuccess", testSetupAlertControllerWithSuccess)
   ]
 
-  func testExample() {
+  // MARK: - Overrides
+  override func setUp() {
+    super.setUp()
 
+    let controller = MockViewController()
+
+    let properties = PIAlertProperties(
+      title: "Choose Image",
+      cameraActionTitle: "Camera",
+      gallaryActionTitle: "Gallary",
+      cancelActionTitle: "Cancelar"
+    )
+
+    pickImageAlert = PickImageAlert(with: controller, alertProperties: properties)
+  }
+
+  override func tearDown() {
+    pickImageAlert = nil
+    super.tearDown()
+  }
+
+  // MARK: - Test Methods
+  func testInitWithSuccess() {
+    XCTAssertNotNil(pickImageAlert)
+    XCTAssertNotNil(pickImageAlert?.alertController)
+    XCTAssertNotNil(pickImageAlert?.pickerController.delegate)
+    XCTAssertTrue(pickImageAlert?.pickerController.delegate is PickImageAlert)
+    XCTAssertEqual(pickImageAlert?.limitImages, 30)
+    XCTAssertEqual(pickImageAlert?.imageSize, CGSize(width: 320, height: 320))
+  }
+
+  func testSetupAlertControllerWithSuccess() {
+    XCTAssertEqual(pickImageAlert?.alertController?.actions.count, 3)
+    XCTAssertEqual(pickImageAlert?.alertController?.actions[0].title, "Camera")
+    XCTAssertEqual(pickImageAlert?.alertController?.actions[1].title, "Gallary")
+    XCTAssertEqual(pickImageAlert?.alertController?.actions[2].title, "Cancelar")
   }
 }

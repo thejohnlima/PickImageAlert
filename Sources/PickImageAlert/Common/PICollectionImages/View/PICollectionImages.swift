@@ -44,14 +44,29 @@ class PICollectionImages: UIView {
   var collectionViewSizeChanged: Bool = false
   
   weak var delegate: PICollectionImagesDelegate?
-  
+
+  // MARK: - Initializers
+  override public init(frame: CGRect = .zero) {
+    super.init(frame: frame)
+    initialize()
+  }
+
+  required init?(coder: NSCoder) {
+    super.init(coder: coder)
+  }
+
   // MARK: - Overrides
   override func awakeFromNib() {
     super.awakeFromNib()
-    setupCollectionView()
+    initialize()
   }
 
   // MARK: - Private Methods
+  private func initialize() {
+    Bundle(for: type(of: self)).loadNibNamed(PICollectionImages.identifier, owner: self)
+    setupCollectionView()
+  }
+
   private func setupCollectionView() {
     collectionView.registerNib(PICollectionImageCell.self)
 

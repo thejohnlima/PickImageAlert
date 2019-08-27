@@ -11,8 +11,7 @@ Pod::Spec.new do |s|
   s.platform           = :ios, "11.0"
   s.source             = { :git => "https://github.com/limadeveloper/PickImageAlert.git", :tag => "#{s.version}" }
   s.framework          = "UIKit"
-  s.source_files       = "Framework/PickImageAlert/**/*.{swift}"
-  s.resources          = "Framework/PickImageAlert/**/*.{png,jpeg,jpg,storyboard,xib,xcassets}"
+  s.source_files       = "Sources/PickImageAlert/**/*.{swift}"
+  s.resources          = "Sources/PickImageAlert/**/*.{png,jpeg,jpg,storyboard,xib,xcassets}"
   s.swift_version      = "5.0"
-  s.dependency 'SwiftLint'
 end

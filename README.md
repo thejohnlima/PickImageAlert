@@ -20,6 +20,17 @@
 
 ## ⚒ Installation
 
+### Swift Package Manager
+
+**SWMailgun** is available through [SPM](https://developer.apple.com/videos/play/wwdc2019/408/). To install
+it, follow the steps:
+
+```script
+Open Xcode project > File > Swift Packages > Add Package Dependecy
+```
+
+After that, put the url in the field: `https://github.com/limadeveloper/PickImageAlert.git`
+
 ### CocoaPods
 
 **PickImageAlert** is available through [CocoaPods](https://cocoapods.org/pods/PickImageAlert). To install
@@ -80,4 +91,4 @@ And don't forget to setup your info.plist file to require photo library access:
 
 ## 📜 License
 
-**PickImageAlert** is under MIT license. See the [LICENSE](LICENSE) file for more info.
+**PickImageAlert** is under MIT license. See the [LICENSE](https://raw.githubusercontent.com/limadeveloper/PickImageAlert/master/LICENSE) file for more info.
