@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "PickImageAlert",
+        "repositoryURL": "https://github.com/limadeveloper/PickImageAlert.git",
+        "state": {
+          "branch": "feature/spm_support",
+          "revision": "e99b65921aefdeae8d385267ea8619940389cc5e",
+          "version": null
+        }
+      }
+    ]
+  },
+  "version": 1
+}
