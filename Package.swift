@@ -5,7 +5,7 @@ import PackageDescription
 let package = Package(
   name: "PickImageAlert",
   platforms: [
-    .iOS(.v13)
+    .iOS(.v11)
   ],
   products: [
     .library(
