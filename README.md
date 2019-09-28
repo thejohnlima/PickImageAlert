@@ -1,17 +1,17 @@
 # PickImageAlert
 
-[![GitHub release](https://img.shields.io/github/release/limadeveloper/PickImageAlert.svg)](https://github.com/limadeveloper/PickImageAlert/releases)
-[![Build Status](https://travis-ci.org/limadeveloper/PickImageAlert.svg?branch=master)](https://travis-ci.org/limadeveloper/PickImageAlert)
-[![codecov](https://codecov.io/gh/limadeveloper/PickImageAlert/branch/master/graph/badge.svg)](https://codecov.io/gh/limadeveloper/PickImageAlert)
+[![GitHub release](https://img.shields.io/github/release/thejohnlima/PickImageAlert.svg)](https://github.com/thejohnlima/PickImageAlert/releases)
+[![Build Status](https://travis-ci.org/thejohnlima/PickImageAlert.svg?branch=master)](https://travis-ci.org/thejohnlima/PickImageAlert)
+[![codecov](https://codecov.io/gh/thejohnlima/PickImageAlert/branch/master/graph/badge.svg)](https://codecov.io/gh/thejohnlima/PickImageAlert)
 [![CocoaPods](https://img.shields.io/badge/Cocoa%20Pods-✓-4BC51D.svg?style=flat)](https://cocoapods.org/pods/PickImageAlert)
 [![Language](https://img.shields.io/badge/language-Swift%205.0-orange.svg)](https://developer.apple.com/swift/)
 [![Platform](https://img.shields.io/cocoapods/p/PickImageAlert.svg?style=flat)](https://developer.apple.com/ios/)
-[![License](https://img.shields.io/github/license/limadeveloper/PickImageAlert.svg)](https://raw.githubusercontent.com/limadeveloper/PickImageAlert/master/LICENSE)
+[![License](https://img.shields.io/github/license/thejohnlima/PickImageAlert.svg)](https://raw.githubusercontent.com/thejohnlima/PickImageAlert/master/LICENSE)
 [![Donate](https://img.shields.io/badge/Donate-PayPal-blue.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=NZN6YS87V9ZZW&currency_code=BRL&source=url)
 
 **PickImageAlert** shows a list of your photos using the system alert controller. Also it's possible to take a photo and access the photo library.
 
-![PickImageAlert](https://raw.githubusercontent.com/limadeveloper/PickImageAlert/master/Documents/PickImageAlert.gif)
+![PickImageAlert](https://raw.githubusercontent.com/thejohnlima/PickImageAlert/master/Documents/PickImageAlert.gif)
 
 ## ❗️Requirements
 
@@ -60,7 +60,7 @@ pickImageAlert.pickImage { image in
 
 And don't forget to setup your info.plist file to require photo library access:
 
-![plist](https://raw.githubusercontent.com/limadeveloper/PickImageAlert/master/Documents/plist_photos_access.png)
+![plist](https://raw.githubusercontent.com/thejohnlima/PickImageAlert/master/Documents/plist_photos_access.png)
 
 ## 📱 Feature
 
