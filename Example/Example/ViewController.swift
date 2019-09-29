@@ -3,10 +3,9 @@
 //  Example
 //
 //  Created by John Lima on 15/11/18.
-//  Copyright © 2018 limadeveloper. All rights reserved.
+//  Copyright © 2018 thejohnlima. All rights reserved.
 //
 
-import UIKit
 import PickImageAlert
 
 class ViewController: UIViewController {
@@ -22,9 +21,12 @@ class ViewController: UIViewController {
 
   // MARK: - Actions
   @IBAction private func pickImage(sender: Any?) {
-    pickImageAlert?.pickImage { image in
-      print("📷 selected photo: \(String(describing: image))")
-    }
+    pickImageAlert?.pickImage(success: { image in
+        print("📷 selected photo: \(String(describing: image))")
+        UIApplication.shared.isNetworkActivityIndicatorVisible = false
+    }, loading: {
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
+    })
   }
 
   // MARK: - Private Methods

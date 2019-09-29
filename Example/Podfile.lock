@@ -1,29 +1,29 @@
 PODS:
-  - PickImageAlert (1.0.3):
+  - PickImageAlert (1.0.4):
     - SwiftLint
-  - SwiftLint (0.34.0)
+  - SwiftLint (0.35.0)
 
 DEPENDENCIES:
-  - PickImageAlert (from `https://github.com/limadeveloper/PickImageAlert.git`, branch `master`)
+  - PickImageAlert (from `https://github.com/thejohnlima/PickImageAlert.git`, branch `master`)
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  trunk:
     - SwiftLint
 
 EXTERNAL SOURCES:
   PickImageAlert:
     :branch: master
-    :git: https://github.com/limadeveloper/PickImageAlert.git
+    :git: https://github.com/thejohnlima/PickImageAlert.git
 
 CHECKOUT OPTIONS:
   PickImageAlert:
-    :commit: 6d0769a76520af22c80f17adc593672ed8748b71
-    :git: https://github.com/limadeveloper/PickImageAlert.git
+    :commit: 21d1ce6c08ead7816b0fb2e48ab244f33491c46f
+    :git: https://github.com/thejohnlima/PickImageAlert.git
 
 SPEC CHECKSUMS:
-  PickImageAlert: 0451e4645e0ff8b7456cf9a30df1478b96d25acd
-  SwiftLint: 79d48a17c6565dc286c37efb8322c7b450f95c67
+  PickImageAlert: 62eabc5887524cfd6f15bcd573c61c605114d509
+  SwiftLint: 5553187048b900c91aa03552807681bb6b027846
 
-PODFILE CHECKSUM: dbd570fafb19d44715a9f77e5fac73c79427e772
+PODFILE CHECKSUM: b87520294c63aee995d1a42074187b8861f8b786
 
-COCOAPODS: 1.7.5
+COCOAPODS: 1.8.1

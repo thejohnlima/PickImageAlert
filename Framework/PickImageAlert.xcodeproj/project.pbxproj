@@ -70,7 +70,7 @@
 		827A8B5E2197DE74002150E2 /* PICollectionImageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PICollectionImageCell.xib; sourceTree = "<group>"; };
 		828C264C21990B7B0055EDD6 /* PIAlertControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PIAlertControllerTests.swift; sourceTree = "<group>"; };
 		828C264E219913BE0055EDD6 /* LocalizableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizableTests.swift; sourceTree = "<group>"; };
-		828C26502199156D0055EDD6 /* PICollectionImagesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PICollectionImagesTests.swift; sourceTree = "<group>"; };
+		828C26502199156D0055EDD6 /* PICollectionImagesTests.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = PICollectionImagesTests.swift; sourceTree = "<group>"; tabWidth = 2; };
 		828C26522199198C0055EDD6 /* ExtensionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionTests.swift; sourceTree = "<group>"; };
 		828C265421991B140055EDD6 /* PickImageAlertTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickImageAlertTests.swift; sourceTree = "<group>"; };
 		828C265621991CAA0055EDD6 /* MockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockViewController.swift; sourceTree = "<group>"; };

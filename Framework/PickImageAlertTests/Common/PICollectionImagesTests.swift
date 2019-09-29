@@ -27,53 +27,71 @@ import XCTest
 class PICollectionImagesTests: XCTestCase {
 
   // MARK: - Properties
-  private var collectionImages: PICollectionImages?
+  // swiftlint:disable implicitly_unwrapped_optional
+  private var collectionImages: PICollectionImages!
+  private var controller: UIViewController!
   
   // MARK: - Overrides
   override func setUp() {
     super.setUp()
     collectionImages = UIView.fromNib()
+    collectionImages.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+    collectionImages.collectionView.dataSource = self
+    
+    let layout = UICollectionViewFlowLayout()
+    layout.itemSize = CGSize(width: 120, height: 200)
+    
+    collectionImages.collectionView.collectionViewLayout = layout
 
-    collectionImages?.viewModel.photos = [
+    collectionImages.viewModel.photos = [
       PIPhoto(
         large: CGSize(width: 320, height: 520),
         small: CGSize(width: 320, height: 320),
         asset: PHAsset()
       )
     ]
+    
+    controller = UIViewController()
+    controller.view.frame = CGRect(origin: .zero, size: CGSize(width: 320, height: 568))
+    controller.view.addSubview(collectionImages)
+    _ = controller.view
+    
+    collectionImages.collectionView.reloadData()
   }
 
   override func tearDown() {
     collectionImages = nil
+    controller = nil
     super.tearDown()
   }
 
   // MARK: - Tests
   func testInitWithSuccess() {
     XCTAssertNotNil(collectionImages)
-    XCTAssertNotNil(collectionImages?.collectionView)
-    XCTAssertEqual(collectionImages?.viewModel.photos.count, 1)
+    XCTAssertNotNil(collectionImages.collectionView)
+    XCTAssertEqual(collectionImages.viewModel.photos.count, 1)
   }
 
   func testNumberOfItemsInCollectionView() {
-    guard let collectionView = collectionImages?.collectionView else {
+    guard let collectionView = collectionImages.collectionView else {
       XCTFail("⚠️ collection view should not be nil")
       return
     }
     let numberOfItems = collectionImages?.collectionView(collectionView, numberOfItemsInSection: 0)
     XCTAssertEqual(numberOfItems, 1)
   }
+}
 
-  func testCellItemInCollectionView() {
-    guard let collectionView = collectionImages?.collectionView else {
-      XCTFail("⚠️ collection view should not be nil")
-      return
-    }
-    let indexaPath = IndexPath(item: 0, section: 0)
-    let cell = collectionImages?.collectionView(collectionView, cellForItemAt: indexaPath) as? PICollectionImageCell
-    XCTAssertNotNil(cell)
-    XCTAssertNotNil(cell?.photo)
-    XCTAssertNotNil(cell?.photoImageView)
-    XCTAssertEqual(cell?.photoImageView?.layer.cornerRadius, 3)
+// MARK: - UICollectionViewDataSource
+extension PICollectionImagesTests: UICollectionViewDataSource {
+  func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    return collectionImages.viewModel.photos.count
+  }
+  
+  func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    let cell: PICollectionImageCell = collectionView.dequeueReusableCell(for: indexPath)
+    let item = collectionImages.viewModel.photos[indexPath.item]
+    cell.photo = item
+    return cell
   }
 }
