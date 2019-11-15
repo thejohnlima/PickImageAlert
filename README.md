@@ -7,7 +7,7 @@
 [![Language](https://img.shields.io/badge/language-Swift%205.0-orange.svg)](https://developer.apple.com/swift/)
 [![Platform](https://img.shields.io/cocoapods/p/PickImageAlert.svg?style=flat)](https://developer.apple.com/ios/)
 [![License](https://img.shields.io/github/license/thejohnlima/PickImageAlert.svg)](https://raw.githubusercontent.com/thejohnlima/PickImageAlert/master/LICENSE)
-[![Donate](https://img.shields.io/badge/Donate-PayPal-blue.svg)](paypal.me/thejohnlima)
+[![Donate](https://img.shields.io/badge/Donate-PayPal-blue.svg)](https://www.paypal.me/thejohnlima)
 
 **PickImageAlert** shows a list of your photos using the system alert controller. Also it's possible to take a photo and access the photo library.
 
