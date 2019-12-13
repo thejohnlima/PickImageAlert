@@ -2,7 +2,7 @@ language: swift
 osx_image: xcode11
 before_install:
   - set -o pipefail
-  - xcrun simctl boot "iPhone SE" || echo "(Pre)Launched the simulator."
+  - xcrun simctl boot "iPhone 8" || echo "(Pre)Launched the simulator."
 script:
   - cd Framework
   - bundle install
