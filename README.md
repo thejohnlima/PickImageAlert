@@ -1,13 +1,34 @@
-# PickImageAlert
+<h1 align="center">PickImageAlert</h1>
 
-[![GitHub release](https://img.shields.io/github/release/thejohnlima/PickImageAlert.svg)](https://github.com/thejohnlima/PickImageAlert/releases)
-[![Build Status](https://travis-ci.org/thejohnlima/PickImageAlert.svg?branch=master)](https://travis-ci.org/thejohnlima/PickImageAlert)
-[![codecov](https://codecov.io/gh/thejohnlima/PickImageAlert/branch/master/graph/badge.svg)](https://codecov.io/gh/thejohnlima/PickImageAlert)
-[![CocoaPods](https://img.shields.io/badge/Cocoa%20Pods-✓-4BC51D.svg?style=flat)](https://cocoapods.org/pods/PickImageAlert)
-[![Language](https://img.shields.io/badge/language-Swift%205.0-orange.svg)](https://developer.apple.com/swift/)
-[![Platform](https://img.shields.io/cocoapods/p/PickImageAlert.svg?style=flat)](https://developer.apple.com/ios/)
-[![License](https://img.shields.io/github/license/thejohnlima/PickImageAlert.svg)](https://raw.githubusercontent.com/thejohnlima/PickImageAlert/master/LICENSE)
-[![Donate](https://img.shields.io/badge/Donate-PayPal-blue.svg)](https://paypal.me/thejohnlima)
+<p align="center">
+ <a href="https://github.com/thejohnlima/PickImageAlert/releases">
+  <img src="https://img.shields.io/github/v/release/thejohnlima/PickImageAlert?style=flat">
+ </a>
+ <a href="https://travis-ci.org/thejohnlima/PickImageAlert">
+  <img src="https://travis-ci.org/thejohnlima/PickImageAlert.svg?branch=master">
+ </a>
+ <a href="https://codecov.io/gh/thejohnlima/PickImageAlert">
+  <img src="https://codecov.io/gh/thejohnlima/PickImageAlert/branch/master/graph/badge.svg">
+ </a>
+ <a href="https://cocoapods.org/pods/PickImageAlert">
+  <img src="https://img.shields.io/badge/Cocoa%20Pods-✓-4BC51D.svg?style=flat">
+ </a>
+ <a href="https://github.com/thejohnlima/PickImageAlert">
+  <img src="https://img.shields.io/github/repo-size/thejohnlima/PickImageAlert.svg?style=flat">
+ </a>
+ <a href="https://raw.githubusercontent.com/thejohnlima/PickImageAlert/master/LICENSE">
+  <img src="https://img.shields.io/github/license/thejohnlima/PickImageAlert.svg?style=flat">
+ </a>
+ <a href="https://developer.apple.com/ios/">
+  <img src="https://img.shields.io/cocoapods/p/PickImageAlert?style=flat">
+ </a>
+ <a href="https://developer.apple.com/swift/">
+  <img src="https://img.shields.io/badge/Swift-5-blue.svg?style=flat">
+ </a>
+ <a href="https://patreon.com/thejohnlima">
+  <img src="https://img.shields.io/badge/donate-patreon-yellow.svg?style=flat">
+ </a>
+</p>
 
 **PickImageAlert** shows a list of your photos using the system alert controller. Also it's possible to take a photo and access the photo library.
 
