@@ -2,31 +2,28 @@
 
 <p align="center">
  <a href="https://github.com/thejohnlima/PickImageAlert/releases">
-  <img src="https://img.shields.io/github/v/release/thejohnlima/PickImageAlert?style=flat">
+  <img src="https://img.shields.io/github/v/release/thejohnlima/PickImageAlert?style=for-the-badge">
  </a>
- <a href="https://travis-ci.org/thejohnlima/PickImageAlert">
-  <img src="https://travis-ci.org/thejohnlima/PickImageAlert.svg?branch=master">
- </a>
- <a href="https://codecov.io/gh/thejohnlima/PickImageAlert">
-  <img src="https://codecov.io/gh/thejohnlima/PickImageAlert/branch/master/graph/badge.svg">
+ <a href="https://github.com/thejohnlima/PickImageAlert/actions">
+  <img src="https://img.shields.io/github/workflow/status/thejohnlima/PickImageAlert/CI/master?style=for-the-badge">
  </a>
  <a href="https://cocoapods.org/pods/PickImageAlert">
-  <img src="https://img.shields.io/badge/Cocoa%20Pods-✓-4BC51D.svg?style=flat">
- </a>
+  <img src="https://img.shields.io/badge/Cocoa%20Pods-✓-4BC51D.svg?style=for-the-badge">
+ </a><br>
  <a href="https://github.com/thejohnlima/PickImageAlert">
-  <img src="https://img.shields.io/github/repo-size/thejohnlima/PickImageAlert.svg?style=flat">
+  <img src="https://img.shields.io/github/repo-size/thejohnlima/PickImageAlert.svg?style=for-the-badge">
  </a>
  <a href="https://raw.githubusercontent.com/thejohnlima/PickImageAlert/master/LICENSE">
-  <img src="https://img.shields.io/github/license/thejohnlima/PickImageAlert.svg?style=flat">
+  <img src="https://img.shields.io/github/license/thejohnlima/PickImageAlert.svg?style=for-the-badge">
  </a>
  <a href="https://developer.apple.com/ios/">
-  <img src="https://img.shields.io/cocoapods/p/PickImageAlert?style=flat">
+  <img src="https://img.shields.io/cocoapods/p/PickImageAlert?style=for-the-badge">
  </a>
  <a href="https://developer.apple.com/swift/">
-  <img src="https://img.shields.io/badge/Swift-5-blue.svg?style=flat">
+  <img src="https://img.shields.io/badge/Swift-5-blue.svg?style=for-the-badge">
  </a>
  <a href="https://patreon.com/thejohnlima">
-  <img src="https://img.shields.io/badge/donate-patreon-yellow.svg?style=flat">
+  <img src="https://img.shields.io/badge/donate-patreon-yellow.svg?style=for-the-badge">
  </a>
 </p>
 
