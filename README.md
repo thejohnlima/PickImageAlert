@@ -4,17 +4,11 @@
  <a href="https://github.com/thejohnlima/PickImageAlert/releases">
   <img src="https://img.shields.io/github/v/release/thejohnlima/PickImageAlert?style=for-the-badge">
  </a>
- <a href="https://github.com/thejohnlima/PickImageAlert/actions">
-  <img src="https://img.shields.io/github/workflow/status/thejohnlima/PickImageAlert/CI/master?style=for-the-badge">
- </a>
  <a href="https://cocoapods.org/pods/PickImageAlert">
   <img src="https://img.shields.io/badge/Cocoa%20Pods-✓-4BC51D.svg?style=for-the-badge">
  </a><br>
  <a href="https://github.com/thejohnlima/PickImageAlert">
   <img src="https://img.shields.io/github/repo-size/thejohnlima/PickImageAlert.svg?style=for-the-badge">
- </a>
- <a href="https://raw.githubusercontent.com/thejohnlima/PickImageAlert/master/LICENSE">
-  <img src="https://img.shields.io/github/license/thejohnlima/PickImageAlert.svg?style=for-the-badge">
  </a>
  <a href="https://developer.apple.com/ios/">
   <img src="https://img.shields.io/cocoapods/p/PickImageAlert?style=for-the-badge">
@@ -22,8 +16,8 @@
  <a href="https://developer.apple.com/swift/">
   <img src="https://img.shields.io/badge/Swift-5-blue.svg?style=for-the-badge">
  </a>
- <a href="https://paypal.me/johncls">
-  <img src="https://img.shields.io/badge/Donate-PayPal-blue.svg?style=for-the-badge">
+ <a href="https://raw.githubusercontent.com/thejohnlima/PickImageAlert/master/LICENSE">
+  <img src="https://img.shields.io/github/license/thejohnlima/PickImageAlert.svg?style=for-the-badge">
  </a>
 </p>
 
@@ -99,3 +93,7 @@ And don't forget to setup your info.plist file to require photo library access:
 ## 📜 License
 
 **PickImageAlert** is under MIT license. See the [LICENSE](LICENSE) file for more info.
+
+## ☕️ Support
+
+<a href="https://www.buymeacoffee.com/thejohnlima" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
